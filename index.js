@@ -36,27 +36,37 @@ const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min)) + 
 
 // Endpoint para obtener todos los productos
 app.get('/items', async (req, res) => {
+    console.log('Accediendo ruta /items...')
     itemsCount++;
     const items = fileStringToArray(products);
     const cantidad = items.length;
-    res.json({ items, cantidad });
+    const response = { items, cantidad };
+    console.log(`Respuesta enviada!!\n${JSON.stringify(response, null, 2)}`) 
+    res.json(response);
 });
 
 // Endpoint para obtener un producto en aleatorio
 app.get('/item-random', async (req, res) => {
+    console.log('Accediendo ruta /item-random...')
     itemCount++;
     const items = fileStringToArray(products);
     const randomIndex = getRandomNumber(0, items.length);
+    console.log(`Se escogerá el producto del array con indice ${randomIndex}`)
     const item = items[randomIndex];
-    res.json({ item });
+    const response = { item }
+    console.log(`Respuesta enviada!!\n${JSON.stringify(response, null, 2)}`) 
+    res.json(response);
 });
 // Endpoint para obtener número de visitas a endpoints anteriores
 app.get('/visitas', async (req, res) => {
+    console.log('Accediendo ruta /visitas...')
     const visitas = {
         items: itemsCount,
         item: itemCount
     }
-    res.json({ visitas });
+    const response = { visitas };
+    console.log(`Respuesta enviada!!\n${JSON.stringify(response, null, 2)}`) 
+    res.json(response);
 });
 
 //#endregion IMPLEMENTACION ENDPOINTS
@@ -72,7 +82,7 @@ const server = app.listen(port, () => {
 
 // Manejo de errores
 server.on('error', error => {
-    console.log('error en el servidor:', error);
+    console.error('error en el servidor:', error);
 });
 
 //#endregion CONFIGURACION SERVER
