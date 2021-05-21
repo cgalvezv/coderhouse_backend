@@ -1,0 +1,26 @@
+{
+  "name": "coderhouse_backend",
+  "version": "0.0.0",
+  "description": "Desafíos y proyectos para el curso Programación Backend - Coderhouse",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cgalvezv/coderhouse_backend.git"
+  },
+  "keywords": [
+    "Coderhouse",
+    "Programación",
+    "Backend"
+  ],
+  "author": "Camilo Gálvez Vidal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cgalvezv/coderhouse_backend/issues"
+  },
+  "homepage": "https://github.com/cgalvezv/coderhouse_backend#readme"
+}
