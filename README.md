@@ -33,7 +33,7 @@ Para el buen funcionamiento de este servidor, es **extrictamente** necesario ten
 	}
 ]
 ```
-- Este servidor utilizará como característica la recompilación automática cuando se detecte un cambio, utilizando el paquete `nodemon`. Por este motivo, es necesario que dicha dependencia este agregada en el archivo `package.json`. Si no se encontrara la dependencia, se puede instalar en el directorio local del repositorio, utilizando el comando `npm instal nodemon --save`.
+- Este servidor utilizará como característica la recompilación automática cuando se detecte un cambio, utilizando el paquete `nodemon`. Por este motivo, es necesario que dicha dependencia este agregada en el archivo `package.json`. Si no se encontrara la dependencia, se puede instalar en el directorio local del repositorio, utilizando el comando `npm install nodemon --save`.
 
 ### Instalación y ejecución
 Para la instalación y próxima ejecución del servidor, se debe ejecutar los siguientes comandos:
