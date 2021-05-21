@@ -10,7 +10,7 @@
 
 ### Requisitos
 Para el buen funcionamiento de este servidor, es **extrictamente** necesario tener en cuenta los siguientes puntos:
-- Generar en la raiz del repositorio, el archivo `producto.txt` como fuente de datos, y para la buena ejecución de los endpoints establecidos, se puede utilizar el siguiente ejemplo como archivo: 
+- Para la buena ejecución de los endpoints establecidos, es necesario generar en la raiz del repositorio el archivo `producto.txt` como fuente de datos. Se puede utilizar el siguiente ejemplo como archivo: 
 ```sh
 [
 	{
@@ -33,7 +33,7 @@ Para el buen funcionamiento de este servidor, es **extrictamente** necesario ten
 	}
 ]
 ```
-- Este servidor utilizará la característica de recompilación automática, utilizando el paquete `nodemon`. Por este motivo, es necesario que dicha dependencia este agregada en el archivo `package.json`.
+- Este servidor utilizará como característica la recompilación automática cuando se detecte un cambio, utilizando el paquete `nodemon`. Por este motivo, es necesario que dicha dependencia este agregada en el archivo `package.json`. Si no se encontrara la dependencia, se puede instalar en el directorio local del repositorio, utilizando el comando `npm instal nodemon --save`.
 
 ### Instalación y ejecución
 Para la instalación y próxima ejecución del servidor, se debe ejecutar los siguientes comandos:
