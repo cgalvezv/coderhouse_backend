@@ -2,10 +2,9 @@
   "name": "coderhouse_backend",
   "version": "0.0.0",
   "description": "Desafíos y proyectos para el curso Programación Backend - Coderhouse",
-  "main": "index.js",
-  "type": "module",
+  "main": "server.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "nodemon server.js",
     "test": "test"
   },
   "repository": {
