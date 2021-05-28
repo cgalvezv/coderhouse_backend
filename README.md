@@ -1,7 +1,7 @@
 # Programación Backend - Coderhouse
 ## Autor: _Camilo Gálvez Vidal_
 
-## Desafío 8
+## Desafío 8 - Parte 1
 
 
 ### Features
@@ -13,7 +13,7 @@
 ### Requisitos
 Para el buen funcionamiento de este servidor, es **extrictamente** necesario tener en cuenta los siguientes puntos:
 
-- El producto debe se un objeto que cumpla con la siguiente estructura:
+- Para agregar un producto nuevo, el objeto debe cumplir con la siguiente estructura:
 ```sh
 { 
     "title": "Escuadra",
