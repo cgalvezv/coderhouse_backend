@@ -1,35 +1,32 @@
-//Desafío 8 - Express avanzado - parte 1
+//Desafío 8 - Express avanzado - parte 2
 //author: Camilo Gálvez Vidal
 const express = require('express');
-const productos = require('./src/classes/productos');
 
-// creo una app de tipo express
 const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-//#region IMPLEMTACIÓN ENDPOINTS
-//GET: Obtener todo el listado de productos
-app.get('/api/productos/listar', (req, res) => {
-    const response = productos.get();
-    if (response.error) res.status(response.code).json({ error: response.msg });
-    res.status(200).json(response);
-})
-//GET: Obtener un producto en específico, recibiendo el ID desde el uri
-app.get('/api/productos/listar/:id', (req, res) => {
-    const { id } = req.params;
-    const response = productos.get(id);
-    if (response.error) res.status(response.code).json({ error: response.msg });
-    res.status(200).json(response);
-})
-//POST: Agregar un nuevo producto al listado de productos
-app.post('/api/productos/guardar', (req, res) => {
-    const { title, price, thumbnail } = req.body;
-    const response = productos.add(title, price, thumbnail)
-    res.status(200).json(response);
-})
-//#endregion IMPLEMTACIÓN ENDPOINTS
+app.use(express.static('public'));
+
+
+//#region LOGICA MIDDLEWARE ERROR HANDLER
+app.use((err, req, res, next) => {
+    return res.status(500).send(`Error Servidor\n${JSON.stringify(err.message, null, 2)}`);
+});
+//#endregion
+
+//#region LOGICA STATICS FILE
+app.get('/', (req, res) => {
+    res.sendFile('index');
+});
+//#region 
+
+//#region LOGICA ROUTER
+const router = require('./src/routes/productos');
+app.use('/api/productos', router);
+//#endregion
+
 
 // pongo a escuchar el servidor en el puerto indicado
 const puerto = 8080;

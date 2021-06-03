@@ -30,6 +30,32 @@ class Productos {
         this.currentId++;
         return newProduct;
     }
+
+    /**
+     * Actualiza un producto en específico
+     * @param {number} id es el identificador del producto a actualizar
+     * @param {string} title es el nuevo titulo del producto
+     * @param {number} price es el nuevo precio del producto
+     * @param {string} thumbnail es el nuevo url thumbnail del producto
+     * @returns el producto actualizado
+     */
+    edit(id, title, price, thumbnail) {
+        const idxProductToEdit = this.list.findIndex(product => product.id == id);
+        this.list[idxProductToEdit].title = title;
+        this.list[idxProductToEdit].price = price;
+        this.list[idxProductToEdit].thumbnail = thumbnail;
+        return this.list[idxProductToEdit];
+    }
+
+    /**
+     * Elimina un producto en específico
+     * @param {number} id es el identificador del producto a eliminar
+     * @returns el producto que fue eliminado
+     */
+    delete(id) {
+        const idxProductToDelete = this.list.findIndex(product => product.id == id);
+        return this.list.splice(idxProductToDelete, 1)[0];
+    }
 }
 
 class Producto {
