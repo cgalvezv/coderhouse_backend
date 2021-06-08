@@ -6,21 +6,22 @@ const productos = require('../classes/productos');
 //GET: Obtener todo el listado de productos
 router.get('/listar', (req, res) => {
     const response = productos.get();
-    if (response.error) res.status(response.code).json({ error: response.msg });
+    if (response.error) res.status(response.code).json({ error: true, msg: response.msg });
     res.status(200).json(response);
 })
 //GET: Obtener un producto en específico, recibiendo el ID desde el uri
 router.get('/listar/:id', (req, res) => {
     const { id } = req.params;
     const response = productos.get(id);
-    if (response.error) res.status(response.code).json({ error: response.msg });
+    if (response.error) res.status(response.code).json({ error: true, msg: response.msg });
     res.status(200).json(response);
 })
 //POST: Agregar un nuevo producto al listado de productos
 router.post('/guardar', (req, res) => {
     const { title, price, thumbnail } = req.body;
     const response = productos.add(title, price, thumbnail)
-    res.status(200).json(response);
+    res.redirect('/agregar_producto');
+    // res.status(200).json(response);
 })
 //PUT: Agregar un nuevo producto al listado de productos
 router.put('/actualizar/:id', (req, res) => {
