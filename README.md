@@ -1,13 +1,13 @@
 # Programación Backend - Coderhouse
 ## Autor: _Camilo Gálvez Vidal_
 
-## Desafío 8 - Parte 2
+## Desafío 10
 
 
 ### Features
 - Servidor simple creado con NPM y Express
 - Se prueba métodos GET, POST, PUT y DELETE en un API REST
-- Permite el listado de productos
+- Permite el listado de productos, utilizando **Handlebars** para express, como motor de plantillas
 - Permite agregar un producto al listado existente, utilizando un formulario HTML
 - Permite obtención, actualización y eliminación de un producto en específico
 
@@ -34,6 +34,13 @@ npm start
 ```
 
 El servidor se ejecutará de manera local en el puerto `8080`.
+
+### Listado de vistas disponibles
+
+```sh
+http://localhost:8080 - [Muestra el listado de productos disponibles]
+http://localhost:8080/agregar_producto - [Muestra el formulario para agregar un nuevo producto al listado]
+```
 
 ### Listado de endpoints disponibles
 
