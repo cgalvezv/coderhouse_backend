@@ -1,0 +1,19 @@
+<div class="jumbotron">
+    <h1>Vista de Productos</h1>
+    <br>
+    <div class="btn-group" role="group" aria-label="Basic example">
+        <a href="/" class="btn btn-info">Lista de productos</a>
+        <a href="/agregar_producto" class="btn btn-success">Ingresar productos</a>
+    </div>
+    <br>
+    <br>
+    <form action="/api/productos/guardar" method="POST">
+        {{#each inputs}}
+            <div class="form-group">
+                <label for={{this.input_title}}>{{this.title}}</label>
+                <input type="text" class="form-control" id={{this.input_title}} name={{this.name}}>
+            </div>
+        {{/each}}
+        <button type="submit" class="btn btn-primary">Agregar</button>
+    </form>
+</div>
