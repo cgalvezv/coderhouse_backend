@@ -1,0 +1,20 @@
+extends layouts/index
+
+block partial 
+    body
+        h1="Vista de Productos"
+        br
+        ul
+            li 
+                a(class='button', href='/productos/vista') Lista de productos
+            li
+                a(class='button', href='/') Ingresar productos
+        br
+        br
+        form(action="/api/productos/guardar" method="POST")
+            each input in inputs
+                div
+                    label(for=input.input_title style="white-space: nowrap")=input.title
+                        input(type="text" id=input.input_title name=input.name)
+            br
+            button(type="submit") Agregar

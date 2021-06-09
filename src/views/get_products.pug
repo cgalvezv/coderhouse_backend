@@ -1,0 +1,29 @@
+extends layouts/index
+
+block partial 
+    body
+        h1="Vista de Productos"
+        br
+        ul
+            li 
+                a(class='button', href='/productos/vista') Lista de productos
+            li
+                a(class='button', href='/') Ingresar productos
+        br
+        br
+        - const hayProductos = productos.length > 0
+        if hayProductos
+            div
+                table
+                    tr
+                        th Nombre
+                        th Precio
+                        th Foto
+                    each producto in productos
+                        tr
+                            td=producto.title 
+                            td=producto.price 
+                            td
+                                img(width="50" src=producto.thumbnail)
+        else
+            h3="No se encontraron productos" 
