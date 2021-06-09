@@ -62,7 +62,7 @@ app.use('/api/productos', router);
 //#endregion
 
 //#region HANDLEBAR INDEX IMPLEMENTATION
-app.get('/', async (req, res) => {
+app.get('/productos/vista', async (req, res) => {
     const responseApi = await fetch(`http://localhost:${puerto}/api/productos/listar`,{
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
@@ -72,7 +72,7 @@ app.get('/', async (req, res) => {
     res.render('get_products', { productos: data, hayProductos: data.length > 0 });
 });
 
-app.get('/agregar_producto', async (req, res) => {
+app.get('/', async (req, res) => {
     res.render('add_products', { inputs: formIngresoProducto });
 });
 //#region 

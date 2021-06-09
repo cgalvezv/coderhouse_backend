@@ -20,7 +20,7 @@ router.get('/listar/:id', (req, res) => {
 router.post('/guardar', (req, res) => {
     const { title, price, thumbnail } = req.body;
     const response = productos.add(title, price, thumbnail)
-    res.redirect('/agregar_producto');
+    res.redirect('/');
     // res.status(200).json(response);
 })
 //PUT: Agregar un nuevo producto al listado de productos

@@ -38,8 +38,8 @@ El servidor se ejecutará de manera local en el puerto `8080`.
 ### Listado de vistas disponibles
 
 ```sh
-http://localhost:8080 - [Muestra el listado de productos disponibles]
-http://localhost:8080/agregar_producto - [Muestra el formulario para agregar un nuevo producto al listado]
+http://localhost:8080 - [Muestra el formulario para agregar un nuevo producto al listado]
+http://localhost:8080/productos/vista - [Muestra el listado de productos disponibles]
 ```
 
 ### Listado de endpoints disponibles
