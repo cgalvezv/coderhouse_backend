@@ -1,13 +1,13 @@
 # Programación Backend - Coderhouse
 ## Autor: _Camilo Gálvez Vidal_
 
-## Desafío 8 - Parte 2
+## Desafío 11 - EJS
 
 
 ### Features
 - Servidor simple creado con NPM y Express
 - Se prueba métodos GET, POST, PUT y DELETE en un API REST
-- Permite el listado de productos
+- Permite el listado de productos, utilizando **EJS** para express, como motor de plantillas
 - Permite agregar un producto al listado existente, utilizando un formulario HTML
 - Permite obtención, actualización y eliminación de un producto en específico
 
@@ -35,6 +35,13 @@ npm start
 
 El servidor se ejecutará de manera local en el puerto `8080`.
 
+### Listado de vistas disponibles
+
+```sh
+http://localhost:8080 - [Muestra el formulario para agregar un nuevo producto al listado]
+http://localhost:8080/productos/vista - [Muestra el listado de productos disponibles]
+```
+
 ### Listado de endpoints disponibles
 
 ```sh
@@ -47,4 +54,4 @@ http://localhost:8080/api/productos/borrar/:id - DELETE [Elimina un producto en 
 
 Ante cualquier duda acerca del desarrollo, puede tomar contacto con el autor utilizando los siguientes medios de comunicación:
 [Email]: <camilogalvezv@gmail.com>
-[Slack]: <@Camilo Gálvez>
+[Slack]: **@Camilo Gálvez**
