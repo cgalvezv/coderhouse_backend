@@ -1,4 +1,4 @@
-//Desafío 10 - Motores de plantilla - parte 1
+//Desafío 10 - Motores de plantilla - Handlebars
 //author: Camilo Gálvez Vidal
 const express = require('express');
 const handlebars = require('express-handlebars');
