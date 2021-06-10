@@ -1,0 +1,15 @@
+<%- include('./layouts/index') -%>
+<body>
+    <div class="jumbotron">
+        <h1>Vista de Productos</h1>
+        <br>
+        <%- include('./layouts/button_group') -%>
+        <br>
+        <br>
+        <% if (hayProductos) { %> 
+            <%- include('./components/table') -%>
+        <% } else { %>  
+            <h3 class="alert alert-warning">No se encontraron productos</h3>
+        <% } %>
+    </div>
+</body>

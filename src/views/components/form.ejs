@@ -1,0 +1,9 @@
+<form action="/api/productos/guardar" method="POST">
+    <% inputs.forEach( input => { %>
+        <div class="form-group">
+            <label for=<%= input.input_title %> ><%= input.title %></label>
+            <input type="text" class="form-control" id=<%= input.input_title %> name=<%= input.name %>>
+        </div>
+    <% }) %>
+    <button type="submit" class="btn btn-primary">Agregar</button>
+</form>
