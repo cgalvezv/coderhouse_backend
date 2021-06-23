@@ -9,8 +9,8 @@
 - Se prueba websocket's utilizando dependencia **Socket IO**
 - Con la misma herramienta anterior se crea un canal de chat
 - Se utiliza template string para implementación dinámica de la tabla de productos
-- Se implementa transpilación para traducir Javascript ES6 a Javascript ES5
-- Se implementa transpilación para traducir Typescript a Javascript ES5
+- Se implementa transpilación para traducir **Javascript ES6** a **Javascript ES5**
+- Se implementa transpilación para traducir **Typescript** a **Javascript ES5**
 
 ### Requisitos
 Para el buen funcionamiento de este servidor, es **extrictamente** necesario tener en cuenta los siguientes puntos:
