@@ -28,7 +28,6 @@ class Archivo {
             const mensajes = await fs.promises.readFile(this.filename, 'utf-8')
             console.log(mensaje)
             const mensajesArray = fileStringToArray(mensajes)
-            mensaje.id = mensajesArray.length + 1;
             mensajesArray.push(mensaje)
             await fs.promises.writeFile(this.filename, JSON.stringify(mensajesArray, null, '\t'))
         } catch (error) {

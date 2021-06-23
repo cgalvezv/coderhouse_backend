@@ -1,12 +1,13 @@
 # Programación Backend - Coderhouse
 ## Autor: _Camilo Gálvez Vidal_
 
-## Desafío 12
+## Desafío 13
 
 
 ### Features
 - Servidor simple creado con NPM y Express
 - Se prueba websocket's utilizando dependencia **Socket IO**
+- Con la misma herramienta anterior se crea un canal de chat
 - Se utiliza template string para implementación dinámica de la tabla de productos
 
 ### Requisitos
@@ -18,6 +19,16 @@ Para el buen funcionamiento de este servidor, es **extrictamente** necesario ten
     "title": "Escuadra",
     "price": 123.55,
     "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/ruler-triangle-stationary-school-256.png"
+}
+```
+
+- El formato del objeto que contiene un mensaje del chat es el siguiente:
+```sh
+{
+  id: 'x6GZQw1DOwqEA1SPAAAD',
+  author: 'Camilo',
+  fyh: '22/06/2021 20:35:10',
+  text: 'Hola'
 }
 ```
 
@@ -36,9 +47,10 @@ El servidor se ejecutará de manera local en el puerto `8080`.
 ### Listado de vistas disponibles
 
 ```sh
-http://localhost:8080 - [Muestra el formulario para agregar un nuevo producto al listado y tambien la tabla de productos de manera dinámica cuando se va agregando un producto nuevo]
+http://localhost:8080 - [Muestra el formulario para agregar un nuevo producto al listado y además muestra canal de chat]
 ```
 
 Ante cualquier duda acerca del desarrollo, puede tomar contacto con el autor utilizando los siguientes medios de comunicación:
 [Email]: <camilogalvezv@gmail.com>
 [Slack]: **@Camilo Gálvez**
+
