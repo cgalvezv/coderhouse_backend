@@ -1,7 +1,7 @@
 # Programación Backend - Coderhouse
 ## Autor: _Camilo Gálvez Vidal_
 
-## Desafío 13
+## Desafío 14
 
 
 ### Features
@@ -9,6 +9,8 @@
 - Se prueba websocket's utilizando dependencia **Socket IO**
 - Con la misma herramienta anterior se crea un canal de chat
 - Se utiliza template string para implementación dinámica de la tabla de productos
+- Se implementa transpilación para traducir Javascript ES6 a Javascript ES5
+- Se implementa transpilación para traducir Typescript a Javascript ES5
 
 ### Requisitos
 Para el buen funcionamiento de este servidor, es **extrictamente** necesario tener en cuenta los siguientes puntos:
@@ -35,11 +37,18 @@ Para el buen funcionamiento de este servidor, es **extrictamente** necesario ten
 - Este servidor utilizará como característica la recompilación automática cuando se detecte un cambio, utilizando el paquete `nodemon`. Por este motivo, es necesario que dicha dependencia este agregada en el archivo `package.json`. Si no se encontrara la dependencia, se puede instalar en el directorio local del repositorio, utilizando el comando `npm install nodemon --save`.
 
 ### Instalación y ejecución
-Para la instalación y próxima ejecución del servidor, se debe ejecutar los siguientes comandos:
+Para la instalación, transpilación de los archivos que están en Javascript ES6 y próxima ejecución, se debe ejecutar los siguientes comandos :
 ```sh
 cd coderhouse_backend
 npm install
-npm start
+npm run ServerJS6toJS5
+```
+
+Para la instalación, transpilación de los archivos que están en Typescript y próxima ejecución, se debe ejecutar los siguientes comandos :
+```sh
+cd coderhouse_backend
+npm install
+npm run ServerTStoJS5
 ```
 
 El servidor se ejecutará de manera local en el puerto `8080`.
