@@ -1,0 +1,38 @@
+[
+	{
+		"id": 1,
+		"author": "Camilo",
+		"fyh": "22/06/2021 20:35:10",
+		"text": "Hola"
+	},
+	{
+		"id": 2,
+		"author": "Camilo",
+		"fyh": "22/06/2021 20:35:13",
+		"text": "Como estas?"
+	},
+	{
+		"id": 3,
+		"author": "Maquita",
+		"fyh": "22/06/2021 20:35:26",
+		"text": "Bien y tu?"
+	},
+	{
+		"id": 4,
+		"author": "Camilo",
+		"fyh": "22/06/2021 20:35:43",
+		"text": "Muy bien también!"
+	},
+	{
+		"id": 5,
+		"author": "Camilo",
+		"fyh": "22/06/2021 20:35:48",
+		"text": "Tienes planes para hoy?"
+	},
+	{
+		"id": 6,
+		"author": "Maquita",
+		"fyh": "22/06/2021 20:36:10",
+		"text": "Lo siento, hoy es noche de Free Fire! no estoy para nadie"
+	}
+]

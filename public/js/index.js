@@ -11,7 +11,7 @@ socket.on('productos', productos => {
 const titleInput = document.querySelector('#title-input');
 const priceInput = document.querySelector('#price-input');
 const thumbnailInput = document.querySelector('#thumbnail-input');
-const button = document.querySelector('button');
+const button = document.querySelector('#add-button');
 
 button.addEventListener('click', () => {
     const title = titleInput.value;

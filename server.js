@@ -1,19 +1,23 @@
-//Desafío 12- WebSockets
+//Desafío 13- WebSockets - Canal de Chat
 //author: Camilo Gálvez Vidal
 const express = require('express');
-const handlebars = require('express-handlebars');
-const fetch = require('node-fetch');
-
 const app = express();
 
 const http = require('http').Server(app);
 // le pasamos la constante http a socket.io
 const io = require('socket.io')(http);
 
+// Clase para persistir mensaje en un archivo
+const Archivo = require('./src/classes/archivo');
+
 // indicamos donde se encuentran los archivos estaticos
 app.use(express.static('./public'));
 
 const productos = [];
+
+// Instancio el archivo para guardar los mensajes
+const msgFile = new Archivo('./src/database/mensajes.txt');
+const messages = [];
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -26,12 +30,21 @@ app.get('/', (req, res) => {
     res.sendFile('index', { root: __dirname });
 });
 
+
 // cuando se realice la conexion, se ejecutara una sola vez
-io.on('connection', socket => {
+io.on('connection', async (socket) => {
     io.sockets.emit('productos', productos)
-    socket.on('productoSocket', ({ title, price, thumbnail }) => {
+    socket.on('productoSocket', async ({ title, price, thumbnail }) => {
         productos.push({ id: socket.id, title, price, thumbnail });
         io.sockets.emit('productos', productos)
+    })
+
+    io.sockets.emit('messages', messages)
+    socket.on('new-message', async ({ author, fyh, text }) => {
+        const newMessage = { id: socket.id, author, fyh, text};
+        await msgFile.guardar(newMessage) // Guardo en archivo de texto
+        messages.push(newMessage);
+        io.sockets.emit('messages', messages)
     })
 });
 
