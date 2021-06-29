@@ -2,10 +2,9 @@
   "name": "coderhouse_backend",
   "version": "0.0.1",
   "description": "Desafíos y proyectos para el curso Programación Backend - Coderhouse",
-  "main": "index.js",
-  "type": "module",
+  "main": "server.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "nodemon server.js",
     "test": "test"
   },
   "repository": {
@@ -22,5 +21,14 @@
   "bugs": {
     "url": "https://github.com/cgalvezv/coderhouse_backend/issues"
   },
-  "homepage": "https://github.com/cgalvezv/coderhouse_backend#readme"
+  "homepage": "https://github.com/cgalvezv/coderhouse_backend#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.1",
+    "nodemon": "^2.0.7"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  }
 }
