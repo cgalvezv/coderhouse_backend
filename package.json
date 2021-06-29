@@ -4,14 +4,7 @@
   "description": "Desafíos y proyectos para el curso Programación Backend - Coderhouse",
   "main": "server.js",
   "scripts": {
-    "BuildTStoJS5": "./node_modules/.bin/tsc",
-    "WatchTStoJS5": "./node_modules/.bin/tsc -w",
-    "StartTStoJS5": "nodemon ./dist/server.js",
-    "ServerTStoJS5": "npm run BuildTStoJS5 && npm run StartTStoJS5",
-    "BuildJS6toJS5": "./node_modules/.bin/babel server.es6.js -o server.js",
-    "WatchJS6toJS5": "./node_modules/.bin/babel server.es6.js -o server.js -w",
-    "StartJS6toJS5": "nodemon server.js",
-    "ServerJS6toJS5": "npm run BuildJS6toJS5 && npm run StartJS6toJS5",
+    "start": "nodemon server.js",
     "test": "test"
   },
   "repository": {
@@ -30,15 +23,9 @@
   },
   "homepage": "https://github.com/cgalvezv/coderhouse_backend#readme",
   "dependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-polyfill": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
     "express": "^4.17.1",
-    "express-handlebars": "^5.3.2",
     "node-fetch": "^2.6.1",
-    "nodemon": "^2.0.7",
-    "socket.io": "^4.1.2",
-    "typescript": "^4.3.4"
+    "nodemon": "^2.0.7"
   },
   "engines": {
     "node": ">=14.0.0",
