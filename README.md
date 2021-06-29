@@ -49,7 +49,7 @@ El servidor se ejecutará de manera local en el puerto `8080`.
 
 ### Listado de url's disponibles en la API
 
--**Productos**
+- **Productos**
 
 ```sh
 http://localhost:8080/api/productos/listar - GET [Obtiene el listado de productos]
@@ -59,7 +59,7 @@ http://localhost:8080/api/productos/actualizar/:id - PUT [Edita un producto en e
 http://localhost:8080/api/productos/borrar/:id - DELETE [Elimina un producto en específico]
 ```
 
--**Carro de compras**
+- **Carro de compras**
 
 ```sh
 http://localhost:8080/api/carrito/listar - GET [Obtiene el listado de items del carrito]
