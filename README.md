@@ -45,27 +45,27 @@ npm install
 npm start
 ```
 
-El servidor se ejecutará de manera local en el puerto `8080`.
+El servidor se ejecutará de manera local en el puerto `8080` ([http://localhost:8080]) y también existe una versión en Glitch ({https://unequaled-garnet-homegrown.glitch.me]).
 
 ### Listado de url's disponibles en la API
 
 - **Productos**
 
 ```sh
-http://localhost:8080/api/productos/listar - GET [Obtiene el listado de productos]
-http://localhost:8080/api/productos/listar/:id - GET [Obtiene un producto en específico]
-http://localhost:8080/api/productos/agregar - POST [Agrega un producto nuevo]
-http://localhost:8080/api/productos/actualizar/:id - PUT [Edita un producto en específico]
-http://localhost:8080/api/productos/borrar/:id - DELETE [Elimina un producto en específico]
+{url}/api/productos/listar - GET [Obtiene el listado de productos]
+{url}/api/productos/listar/:id - GET [Obtiene un producto en específico]
+{url}/api/productos/agregar - POST [Agrega un producto nuevo]
+{url}/api/productos/actualizar/:id - PUT [Edita un producto en específico]
+{url}/api/productos/borrar/:id - DELETE [Elimina un producto en específico]
 ```
 
 - **Carro de compras**
 
 ```sh
-http://localhost:8080/api/carrito/listar - GET [Obtiene el listado de items del carrito]
-http://localhost:8080/api/carrito/listar/:id - GET [Obtiene un item del carrito en específico]
-http://localhost:8080/api/carrito/agregar - POST [Agrega un item de carrito nuevo]
-http://localhost:8080/api/carrito/borrar/:id - DELETE [Elimina un items de carrito en específico]
+{url}/api/carrito/listar - GET [Obtiene el listado de items del carrito]
+{url}/api/carrito/listar/:id - GET [Obtiene un item del carrito en específico]
+{url}/api/carrito/agregar - POST [Agrega un item de carrito nuevo]
+{url}/api/carrito/borrar/:id - DELETE [Elimina un items de carrito en específico]
 ```
 
 ### Listado de errores 
