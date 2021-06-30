@@ -1,23 +1,22 @@
-//Desafío 13- WebSockets - Canal de Chat
+//Desafío 17- Node y SQL - Parte 2
 //author: Camilo Gálvez Vidal
 const express = require('express');
 const app = express();
+const fetch = require('node-fetch');
+require('dotenv').config();
 
 const http = require('http').Server(app);
 // le pasamos la constante http a socket.io
 const io = require('socket.io')(http);
 
-// Clase para persistir mensaje en un archivo
-const Archivo = require('./src/classes/archivo');
-
 // indicamos donde se encuentran los archivos estaticos
 app.use(express.static('./public'));
 
-const productos = [];
+const mensajeController = require('./src/api/mensajes')
+const Productos = require('./src/models/producto')
 
-// Instancio el archivo para guardar los mensajes
-const msgFile = new Archivo('./src/database/mensajes.txt');
-const messages = [];
+let messages = [];
+let products = [];
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -30,21 +29,41 @@ app.get('/', (req, res) => {
     res.sendFile('index', { root: __dirname });
 });
 
+//#region LOGICA ROUTER
+const routerProductos = require('./src/routes/productos');
+app.use('/api/productos', routerProductos);
+//#endregion
+
 
 // cuando se realice la conexion, se ejecutara una sola vez
 io.on('connection', async (socket) => {
-    io.sockets.emit('productos', productos)
-    socket.on('productoSocket', async ({ title, price, thumbnail }) => {
-        productos.push({ id: socket.id, title, price, thumbnail });
-        io.sockets.emit('productos', productos)
+    const responseProducts = await fetch(`http://localhost:${puerto}/api/productos/listar`, {
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        method: 'GET'
+    });
+    products = await responseProducts.json();
+    io.sockets.emit('productos', products)
+    socket.on('update', async (isOK) => {
+        if (isOK) {
+            const responseProducts = await fetch(`http://localhost:${puerto}/api/productos/listar`, {
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                method: 'GET'
+            });
+            products = await responseProducts.json();
+            io.sockets.emit('productos', products)
+        }
     })
 
-    io.sockets.emit('messages', messages)
-    socket.on('new-message', async ({ author, fyh, text }) => {
-        const newMessage = { id: socket.id, author, fyh, text};
-        await msgFile.guardar(newMessage) // Guardo en archivo de texto
-        messages.push(newMessage);
-        io.sockets.emit('messages', messages)
+    messages = await mensajeController.getAll();
+    io.sockets.emit('messages', messages);
+    socket.on('new-message', async ({ email, mensaje }) => {
+        await mensajeController.add({ email, mensaje })
+        messages = await mensajeController.getAll();
+        io.sockets.emit('messages', messages);
     })
 });
 
