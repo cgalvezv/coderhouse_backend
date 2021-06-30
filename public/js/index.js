@@ -17,7 +17,15 @@ button.addEventListener('click', () => {
     const title = titleInput.value;
     const price = priceInput.value;
     const thumbnail = thumbnailInput.value;
-    socket.emit('productoSocket', { title, price, thumbnail });
+    fetch('/api/productos/guardar', {
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        method: 'POST',
+        body: JSON.stringify({ title, price, thumbnail })
+    }).then(async response => console.log(await response.json()))
+    .then(() => socket.emit('update', true))
+    .catch(error => console.error(error));
 })
 
 const generarTabla = productos => {
