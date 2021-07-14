@@ -1,32 +1,11 @@
-const knex = require('../database/knex');
+const mongoose = require('mongoose');
 
-class Mensaje {
-    constructor() {}
+const schema = mongoose.Schema({
+    mensaje: { type: String, max: 500 },
+    email: { type: String, require: true, max: 100 },
+    fecha: { type: Date, default: new Date() }
+})
 
-    /**
-     * Método que agrega una fila de datos (mensaje y su contenido) a la tabla de mensajes en la base de datos
-     * @param {object} contenido contenido del mensaje que se desea guardar
-     * @returns true si el contenido fue agregado a la base de datos de manera exitosa
-     */
-    async guardar(contenido) {
-        try {
-            return await knex.sqlite3('mensajes').insert(contenido);
-        } catch (error) {
-            throw error;
-        }
-    }
+const Mensaje = mongoose.model('mensajes', schema);
 
-    /**
-     * Método que obtiene todos los registros de mensajes existentes en la base de datos
-     * @returns Toda las filas existentes en la tabla mensajes
-     */
-    async obtenerTodos() {
-        try {
-            return await knex.sqlite3('mensajes');
-        } catch (error) {
-            throw error;
-        }
-    }
-}
-
-module.exports = new Mensaje();
+module.exports = Mensaje;
