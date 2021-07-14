@@ -14,15 +14,15 @@ const thumbnailInput = document.querySelector('#thumbnail-input');
 const button = document.querySelector('#add-button');
 
 button.addEventListener('click', () => {
-    const title = titleInput.value;
-    const price = priceInput.value;
-    const thumbnail = thumbnailInput.value;
+    const nombre = titleInput.value;
+    const precio = priceInput.value;
+    const url = thumbnailInput.value;
     fetch('/api/productos/guardar', {
         headers: {
             'Content-Type': 'application/json'
         },
         method: 'POST',
-        body: JSON.stringify({ title, price, thumbnail })
+        body: JSON.stringify({ nombre, precio, url })
     }).then(async response => console.log(await response.json()))
     .then(() => socket.emit('update', true))
     .catch(error => console.error(error));
@@ -35,9 +35,9 @@ const generarTabla = productos => {
         ${
             productos.map(product => `
                 <tr>
-                    <td>${product.title}</td>
-                    <td>${product.price}</td>
-                    <td><img width="50" src=${product.thumbnail} alt="not found"></td>
+                    <td>${product.nombre}</td>
+                    <td>${product.precio}</td>
+                    <td><img width="50" src=${product.url} alt="not found"></td>
                 </tr>`).join('')
         }
         </table>
