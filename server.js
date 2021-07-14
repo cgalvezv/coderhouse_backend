@@ -1,30 +1,26 @@
-//Desafío 17- Node y SQL - Parte 2
+//Desafío 20- Mongo y NodeJS
 //author: Camilo Gálvez Vidal
 const express = require('express');
 const app = express();
 const fetch = require('node-fetch');
 require('dotenv').config();
-
+const controller = require('./src/api/mensajes');
+const config = require('./src/config/config.json');
 const http = require('http').Server(app);
 // le pasamos la constante http a socket.io
 const io = require('socket.io')(http);
+require('./src/database/connection');
 
-// indicamos donde se encuentran los archivos estaticos
-app.use(express.static('./public'));
-
-const mensajeController = require('./src/api/mensajes')
-const Productos = require('./src/models/producto')
 
 let messages = [];
 let products = [];
 
+const puerto = process.env.PORT || config.PORT;
+
+// Configuraciones para Express
+app.use(express.static('./public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-// pongo a escuchar el servidor en el puerto indicado
-const puerto = 8080;
-
-
 app.get('/', (req, res) => {
     res.sendFile('index', { root: __dirname });
 });
@@ -35,7 +31,7 @@ app.use('/api/productos', routerProductos);
 //#endregion
 
 
-// cuando se realice la conexion, se ejecutara una sola vez
+//#region MANEJO SOCKETS
 io.on('connection', async (socket) => {
     const responseProducts = await fetch(`http://localhost:${puerto}/api/productos/listar`, {
         headers: {
@@ -58,15 +54,17 @@ io.on('connection', async (socket) => {
         }
     })
 
-    messages = await mensajeController.getAll();
+    messages = await controller.findAll();
     io.sockets.emit('messages', messages);
     socket.on('new-message', async ({ email, mensaje }) => {
-        await mensajeController.add({ email, mensaje })
-        messages = await mensajeController.getAll();
+        await controller.create({ email, mensaje })
+        messages = await controller.findAll();
         io.sockets.emit('messages', messages);
     })
 });
+//#endregion
 
+// pongo a escuchar el servidor en el puerto indicado
 const server = http.listen(puerto, () => {
     console.log(`servidor escuchando en http://localhost:${puerto}`);
 });
