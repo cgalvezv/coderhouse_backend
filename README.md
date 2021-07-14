@@ -1,19 +1,20 @@
 # Programación Backend - Coderhouse
 ## Autor: _Camilo Gálvez Vidal_
 
-## Desafío 17
+## Desafío 20
 
 
 ### Features
-- Se prueba conexión a base de datos utilizando la dependencia **Knex**.
+- Se prueba conexión a base de datos Mongo utilizando la dependencia **mongoose**.
+- La base de datos en MongoDB a usar será **ecommerce**.
 - Para esta prueba se divide en dos las lógicas donde se probará la conexión. Estas son **Productos** y **Canal de chat**.
   - Para los productos:
     - Se utiliza una API REST para el manejo de productos, desarrollada con **Express**
-    - Se utiliza como motor de base de datos **MySql**.
+    - Se utiliza la colección **productos**
     - Se puede probar en Postman o en la interfaz existente.
   - Para el canal de chat:
     - Se implementan websocket's utilizando dependencia **Socket IO**.
-    - Se utiliza como motor de base de datos **SqLite3**.
+    - Se utiliza la colección **mensajes**
     - Solamente se puede probar por la interfaz gráfica.
 - Se utiliza template string para implementación dinámica de la tabla de productos y del canal de chat
 
@@ -23,22 +24,22 @@ Para el buen funcionamiento de este servidor, es **extrictamente** necesario ten
 - Para agregar un producto nuevo, el objeto debe cumplir con la siguiente estructura:
 ```sh
 { 
-    "title": "Escuadra",
-    "price": 123.55,
-    "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/ruler-triangle-stationary-school-256.png"
+    "nombre": "Escuadra",
+    "categoria": "Utiles escolares",
+    "precio": 123.55,
+    "stock": 100,
+    "url": "https://cdn3.iconfinder.com/data/icons/education-209/64/ruler-triangle-stationary-school-256.png"
 }
 ```
 
 - El formato del objeto que contiene un mensaje del chat es el siguiente:
 ```sh
 {
-  id: '2',
   email: 'camilogalvezv@gmail.com',
-  fecha: '22/06/2021 20:35:10',
   mensaje: 'Hola'
 }
 ```
-- Para la conexión a la base de datos MySQL se debe tener en cuenta como consideración inicial y para el **correcto funcionamiento** del servidor, la base de datos donde se migrará la tabla de los productos, debe llamarse `test`. Para las credenciales de conexión a la base de datos MySQL, se deja en el repositorio un archivo llamado `.env.example` en donde se debe agregar las credenciales del servidor local MySQL, antes de correr el proceso de migración.
+- Para la conexión a la base de datos MongoDB se debe tener en cuenta como consideración inicial y para el **correcto funcionamiento** del servidor, la base de datos donde se crearán las coleciones y los documentos, debe llamarse `ecommerce`. Para las credenciales de conexión a la base de datos MongoDB, se deja en el repositorio un archivo llamado `.env.example` en donde se debe agregar la url de conección.
 
 - Este servidor utilizará como característica la recompilación automática cuando se detecte un cambio, utilizando el paquete `nodemon`. Por este motivo, es necesario que dicha dependencia este agregada en el archivo `package.json`. Si no se encontrara la dependencia, se puede instalar en el directorio local del repositorio, utilizando el comando `npm install nodemon --save`.
 
@@ -47,7 +48,6 @@ Para la instalación y próxima ejecución del servidor, se debe ejecutar los si
 ```sh
 cd coderhouse_backend
 npm install
-npm run migrate
 npm start
 ```
 
