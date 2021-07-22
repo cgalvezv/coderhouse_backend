@@ -1,7 +1,8 @@
-//Proyecto Final - Entrega 1
+//Proyecto Final - Entrega 2
 //author: Camilo Gálvez Vidal
 const express = require('express');
 const app = express();
+require('dotenv').config();
 
 const http = require('http').Server(app);;
 
@@ -11,10 +12,23 @@ app.use(express.urlencoded({ extended: true }));
 // pongo a escuchar el servidor en el puerto indicado
 const puerto = process.env.PORT || 8080;
 
+//#region LOGICA PERSISTENCE FACTORY
+const daoFactory = require('./src/database')
+//* Codigo persistencias:
+//* 1.- MySQL (local)
+//* 2.- SQLite (local)
+//* 3.- Mongo (local)
+//* 4.- Mongo (DBaaS)
+const persistenceSelected = 2 //?VALOR A CAMBIAR PARA LA PERSISTENCIA.
+const Persistence = daoFactory.getPersistence(persistenceSelected);
+const persistenceInstance = new Persistence();
+persistenceInstance.connect();
+//#endregion
+
 //#region LOGICA ROUTER
 const router = require('./src/routes');
-app.use('/api/productos', router.productos);
-app.use('/api/carrito', router.carro);
+app.use('/api/productos', new router.Productos(persistenceInstance).getRouter());
+app.use('/api/carrito', new router.Carros(persistenceInstance).getRouter());
 //#endregion
 
 // Manejo de error, al acceder a rutas no implementadas
