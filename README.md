@@ -1,7 +1,7 @@
 # Programación Backend - Coderhouse
 ## Autor: _Camilo Gálvez Vidal_
 
-## Desafío 20
+## Desafío 22
 
 
 ### Features
@@ -17,6 +17,7 @@
     - Se utiliza la colección **mensajes**
     - Solamente se puede probar por la interfaz gráfica.
 - Se utiliza template string para implementación dinámica de la tabla de productos y del canal de chat
+- Se agrega endpoint para obtener productos generados con datos falsos randomizados, utilizando la dependencia **Faker**.
 
 ### Requisitos
 Para el buen funcionamiento de este servidor, es **extrictamente** necesario tener en cuenta los siguientes puntos:
@@ -64,6 +65,7 @@ http://localhost:8080 - [Muestra el formulario para agregar un nuevo producto al
 ```sh
 http://localhost:8080/api/productos/listar - GET [Obtiene el listado de productos]
 http://localhost:8080/api/productos/listar/:id - GET [Obtiene un producto en específico]
+http://localhost:8080/api/productos/vista-test?cant=5 - GET [Obtiene el listado de productos con datos falsos]
 http://localhost:8080/api/productos/guardar - POST [Agrega un producto nuevo]
 http://localhost:8080/api/productos/actualizar/:id - PUT [Edita un producto en específico]
 http://localhost:8080/api/productos/borrar/:id - DELETE [Elimina un producto en específico]
