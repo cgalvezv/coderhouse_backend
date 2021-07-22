@@ -1,7 +1,7 @@
-const routerProductos = require('./productos')
-const routerCarro = require('./carro')
+const Productos = require('./productos')
+const Carros = require('./carro')
 
 module.exports = {
-    productos: routerProductos,
-    carro: routerCarro
+    Productos,
+    Carros
 }
