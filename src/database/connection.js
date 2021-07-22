@@ -2,8 +2,7 @@
 const mongoose = require('mongoose');
 const config = require('../config/config.json');
 
-const url = process.env.PORT || config.MONGO_URL;
-
+const url = process.env.MONGO_URL || config.MONGO_URL;
 const connection = mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
 
 mongoose.connection.on('connected', () => {
