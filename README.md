@@ -2,7 +2,7 @@
 # Proyecto Final
 ## Autor: _Camilo Gálvez Vidal_
 
-## Entrega 1
+## Entrega 2
 
 
 ### Features
@@ -11,6 +11,11 @@
 - Se utilizan métodos, GET, POST, PUT, DELETE.
 - Se agrega un middleware para el manejo de los usuarios con rol de **administradores**.
 - Se agrega manejo de errores.
+- Se implementa patron **Factory** para el manejo de persistencias utilizando **DAO (Data Access Object)** por cada conexión a base de datos.
+- Los motores de base de datos a utilizar serán
+  - MongoDB (Servidor local y DB as a Service)
+  - MySQL (Servidor local)
+  - SQLite (Servidor local)
 
 ### Requisitos
 Para el buen funcionamiento de este servidor, es **extrictamente** necesario tener en cuenta los siguientes puntos:
@@ -34,6 +39,7 @@ Para el buen funcionamiento de este servidor, es **extrictamente** necesario ten
 }
 ```
 
+- Para la probar el factory de persistencias, en el archivo `server.js` entre las líneas 16 y 26, esta la sección con la codificación y las instrucciones para probar las peristencias existentes.
 
 - Este servidor utilizará como característica la recompilación automática cuando se detecte un cambio, utilizando el paquete `nodemon`. Por este motivo, es necesario que dicha dependencia este agregada en el archivo `package.json`. Si no se encontrara la dependencia, se puede instalar en el directorio local del repositorio, utilizando el comando `npm install nodemon --save`.
 
@@ -45,7 +51,7 @@ npm install
 npm start
 ```
 
-El servidor se ejecutará de [manera local en el puerto `8080`](http://localhost:8080) y también existe una versión en [Glitch](https://unequaled-garnet-homegrown.glitch.me).
+El servidor se ejecutará de [manera local en el puerto `8080`](http://localhost:8080).
 
 ### Listado de url's disponibles en la API
 
