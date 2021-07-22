@@ -1,17 +1,7 @@
-const Producto = require('./producto');
-const Archivo = require('../database/archivo');
-
-class Productos {
-    constructor() {
-        this.fileProductos = new Archivo(require('path').resolve(__dirname, '../database/productos.txt'));
-    }
-
-    /**
-     * Método que inicializa la clase, trayendo la info desde el archivo utilizado para persisitir 
-     */
-    async init() {
-        this.list = await this.fileProductos.leer();
-        this.currentId = this.list.length + 1;
+class ProductosController {
+    constructor(persistence) {
+        this.persistence = persistence;
+        this.tableName = 'productos';
     }
 
     /**
@@ -19,12 +9,12 @@ class Productos {
      * @param {number} id es el identificador del producto, si es que se desea obtener un producto en específico
      * @returns la lista de todos los productos, o un producto en específico si se recibe su ID
      */
-    get(id = null) {
-        if (this.list.length <= 0) return { error: -1, code: 400, msg: 'No hay productos cargados' }
-        if(!id) return this.list;
-        const productFinded = this.list.find(product => product.id == id);
-        if (!productFinded) return { error: -1, code: 400, msg: 'producto no encontrado' }
-        return productFinded;
+    async get(id = null, query = null) {
+        let llave = null
+        if (id) llave = 'id';
+        const response = await this.persistence.read(this.tableName, llave, id, query);
+        if (response.length <= 0) return { error: -1, code: 400, msg: id ? 'Producto no encontrado' : 'No hay productos cargados' }
+        return response;
     }
 
     /**
@@ -37,12 +27,9 @@ class Productos {
      * @param {number} stock es el stock del producto a agregar
      * @returns el producto que fue agregado al listado de productos
      */
-    add(titulo, descripcion, codigo, precio, foto_url, stock) {
-        const newProduct = new Producto(this.currentId, titulo, descripcion, codigo, precio, foto_url, stock);
-        this.list.push(newProduct);
-        this.currentId++;
-        this.fileProductos.reiniciar(this.list)
-        return newProduct;
+    async add(titulo, descripcion, codigo, precio, foto_url, stock) {
+        const product = { titulo, descripcion, codigo, precio, foto_url, stock };
+        return await this.persistence.create(this.tableName, product);
     }
 
     /**
@@ -56,16 +43,11 @@ class Productos {
      * @param {number} stock es el nuevo stock del producto
      * @returns el producto que fue actualizado en listado de productos
      */
-    edit(id, titulo, descripcion, codigo, precio, foto_url, stock) {
-        const idxProductToEdit = this.list.findIndex(product => product.id == id);
-        this.list[idxProductToEdit].titulo = titulo;
-        this.list[idxProductToEdit].descripcion = descripcion;
-        this.list[idxProductToEdit].codigo = codigo;
-        this.list[idxProductToEdit].precio = precio;
-        this.list[idxProductToEdit].foto_url = foto_url;
-        this.list[idxProductToEdit].stock = stock;
-        this.fileProductos.reiniciar(this.list)
-        return this.list[idxProductToEdit];
+    async edit(id, titulo, descripcion, codigo, precio, foto_url, stock) {
+        const newProduct = { titulo, descripcion, codigo, precio, foto_url, stock };
+        const { ok } = await this.persistence.update(this.tableName, 'id', id, newProduct);
+        if (!Boolean(ok)) return { error: -1, code: 400, msg: 'Error al actualizar producto' }
+        return Boolean(ok);
     }
 
     /**
@@ -73,14 +55,12 @@ class Productos {
      * @param {number} id es el identificador del producto a eliminar
      * @returns el producto que fue eliminado
      */
-    delete(id) {
-        const idxProductToDelete = this.list.findIndex(product => product.id == id);
-        if (idxProductToDelete < 0) return { error: -1, code: 400, msg: 'Carro no encontrado' }
-        const response = this.list.splice(idxProductToDelete, 1)[0];
-        this.fileProductos.reiniciar(this.list)
-        return response;
+    async delete(id) {
+        const { deletedCount } = await this.persistence.delete(this.tableName, 'id', id);
+        if (!Boolean(deletedCount)) return { error: -1, code: 400, msg: 'Error al eliminar producto' }
+        return Boolean(deletedCount);
     }
 }
 
 // exporto una instancia de la clase
-module.exports = new Productos();
+module.exports = ProductosController;
