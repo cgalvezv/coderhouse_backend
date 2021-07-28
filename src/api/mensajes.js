@@ -16,7 +16,6 @@ class MensajeController extends BaseController {
                 id: 'mensajes', 
                 mensajes : mensajes.map( mensaje => ({...mensaje._doc}))
             }
-            console.log(JSON.stringify(mensajesConId).length)
             let mensajesConIdN = normalize(mensajesConId, schemaMensajes)
             return mensajesConIdN;
         }

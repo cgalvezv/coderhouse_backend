@@ -22,6 +22,7 @@ function render(data) {
                 <b style="color:blue;">${elem.email}</b> 
                 [<span style="color:brown;">${elem.fecha}</span>] : 
                 <i style="color:green;">${elem.texto}</i>
+                <img width="50" src=${elem.avatar} alt="not found">
             </div>
         `) 
     }).join(" "); 
