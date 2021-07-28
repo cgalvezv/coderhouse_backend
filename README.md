@@ -1,7 +1,7 @@
 # Programación Backend - Coderhouse
 ## Autor: _Camilo Gálvez Vidal_
 
-## Desafío 22
+## Desafío 23
 
 
 ### Features
@@ -14,6 +14,7 @@
     - Se puede probar en Postman o en la interfaz existente.
   - Para el canal de chat:
     - Se implementan websocket's utilizando dependencia **Socket IO**.
+    - Se normaliza el set de mensajes utilizando la dependencia **Normalizr**.
     - Se utiliza la colección **mensajes**
     - Solamente se puede probar por la interfaz gráfica.
 - Se utiliza template string para implementación dinámica de la tabla de productos y del canal de chat
