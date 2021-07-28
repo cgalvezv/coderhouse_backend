@@ -54,11 +54,11 @@ io.on('connection', async (socket) => {
         }
     })
 
-    messages = await controller.findAll();
+    messages = await controller.getAll();
     io.sockets.emit('messages', messages);
-    socket.on('new-message', async ({ email, mensaje }) => {
-        await controller.create({ email, mensaje })
-        messages = await controller.findAll();
+    socket.on('new-message', async (msj) => {
+        await controller.create(msj)
+        messages = await controller.getAll();
         io.sockets.emit('messages', messages);
     })
 });
