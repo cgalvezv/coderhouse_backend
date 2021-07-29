@@ -1,14 +1,18 @@
-//Desafío 20- Mongo y NodeJS
+//Desafío 24- Cookies y sesión
 //author: Camilo Gálvez Vidal
 const express = require('express');
 const app = express();
 const fetch = require('node-fetch');
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
+const handlebars = require('express-handlebars');
 require('dotenv').config();
 const controller = require('./src/api/mensajes');
 const config = require('./src/config/config.json');
 const http = require('http').Server(app);
 // le pasamos la constante http a socket.io
 const io = require('socket.io')(http);
+
 require('./src/database/connection');
 
 
@@ -19,15 +23,64 @@ const puerto = process.env.PORT || config.PORT;
 
 // Configuraciones para Express
 app.use(express.static('./public'));
+app.engine(
+    "hbs",
+    handlebars({
+      extname: ".hbs",
+      defaultLayout: 'index.hbs',
+    })
+);
+app.set("view engine", "hbs");
+app.set("views", "./src/views");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.get('/', (req, res) => {
-    res.sendFile('index', { root: __dirname });
-});
+app.use(cookieParser())
+app.use(session({
+    secret: 'secret',
+    resave: false,
+    saveUninitialized: false,
+    rolling: true,
+    cookie: {
+        maxAge: 60000
+    }
+}))
 
 //#region LOGICA ROUTER
 const routerProductos = require('./src/routes/productos');
 app.use('/api/productos', routerProductos);
+//#endregion
+
+
+//#region MANEJO LOGIN
+app.get('/login', (req,res) => {
+    if(req.session.nombre) {
+        res.render('home', {
+            nombre: req.session.nombre
+        })
+    }
+    else {
+        res.sendFile(process.cwd() + '/public/login.html')
+    }
+})
+
+app.post('/login', (req,res) => {
+    let { nombre } = req.body
+    req.session.nombre = nombre
+    res.redirect('/')
+})
+
+app.get('/logout', (req,res) => {
+    let nombre = req.session.nombre;
+    if(nombre) {
+        req.session.destroy( err => {
+            if(!err) res.render('logout', { nombre })
+            else res.redirect('/')
+        })
+    }
+    else {
+        res.redirect('/')
+    }
+})
 //#endregion
 
 
