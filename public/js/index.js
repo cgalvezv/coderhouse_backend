@@ -1,6 +1,22 @@
 // inicializamos la conexion
 const socket = io();
 
+const generarTabla = productos => {
+    return `<div class="table-responsive">
+        <table id="product-table" class="table table-dark">
+            <tr> <th>Nombre</th> <th>Precio</th> <th>Foto</th></tr>
+        ${
+            productos.map(product => `
+                <tr>
+                    <td>${product.nombre}</td>
+                    <td>${product.precio}</td>
+                    <td><img width="50" src=${product.url} alt="not found"></td>
+                </tr>`).join('')
+        }
+        </table>
+    </div>`;
+}
+
 // recibo desde el servidor un mensaje
 socket.on('productos', productos => {
     if (productos.length > 0) {
@@ -27,19 +43,3 @@ button.addEventListener('click', () => {
     .then(() => socket.emit('update', true))
     .catch(error => console.error(error));
 })
-
-const generarTabla = productos => {
-    return `<div class="table-responsive">
-        <table id="product-table" class="table table-dark">
-            <tr> <th>Nombre</th> <th>Precio</th> <th>Foto</th></tr>
-        ${
-            productos.map(product => `
-                <tr>
-                    <td>${product.nombre}</td>
-                    <td>${product.precio}</td>
-                    <td><img width="50" src=${product.url} alt="not found"></td>
-                </tr>`).join('')
-        }
-        </table>
-    </div>`;
-}
