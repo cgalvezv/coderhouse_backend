@@ -1,4 +1,4 @@
-//Desafío 24- Cookies y sesión
+//Desafío 25- Cookies y sesión (parte 2)
 //author: Camilo Gálvez Vidal
 const express = require('express');
 const app = express();
@@ -21,6 +21,11 @@ let products = [];
 
 const puerto = process.env.PORT || config.PORT;
 
+const MongoStore = require('connect-mongo');
+const advancedOptions = {
+    useNewUrlParser: true, useUnifiedTopology: true
+}
+
 // Configuraciones para Express
 app.use(express.static('./public'));
 app.engine(
@@ -36,12 +41,16 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser())
 app.use(session({
+    store: MongoStore.create({ 
+        mongoUrl: process.env.MONGO_URL,
+        mongoOptions: advancedOptions
+    }),
     secret: 'secret',
     resave: false,
     saveUninitialized: false,
     rolling: true,
     cookie: {
-        maxAge: 60000
+        maxAge: 600000 // 10 min de duración de la sesión
     }
 }))
 
