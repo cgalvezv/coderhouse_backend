@@ -8,6 +8,7 @@
 - Se prueba conexión a base de datos Mongo utilizando la dependencia **mongoose**.
 - La base de datos en MongoDB a usar será **ecommerce**.
 - Se agrega lógica para la gestión de la sesión, utilizando **Cookie Parser** y **Express Session**.
+- La sesión será almacenada en **Mongo atlas**, utilizando la dependencia **Connect-Mongo**.
 - Para esta prueba se divide en dos las lógicas donde se probará la conexión. Estas son **Productos** y **Canal de chat**.
   - Para los productos:
     - Se utiliza una API REST para el manejo de productos, desarrollada con **Express**
