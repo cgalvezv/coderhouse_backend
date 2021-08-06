@@ -1,12 +1,14 @@
 # Programación Backend - Coderhouse
 ## Autor: _Camilo Gálvez Vidal_
 
-## Desafío 25
+## Desafío 26
 
 
 ### Features
 - Se prueba conexión a base de datos Mongo utilizando la dependencia **mongoose**.
 - La base de datos en MongoDB a usar será **ecommerce**.
+- Para el inicio de sesión y el registro de nuevos usuarios se utilizan las dependencias **passport** utilizando la estrategia local.
+- Para la encriptación de contraseñas se utiliza la dependencia **bcrypt**.
 - Se agrega lógica para la gestión de la sesión, utilizando **Cookie Parser** y **Express Session**.
 - La sesión será almacenada en **Mongo atlas**, utilizando la dependencia **Connect-Mongo**.
 - Para esta prueba se divide en dos las lógicas donde se probará la conexión. Estas son **Productos** y **Canal de chat**.
@@ -69,7 +71,10 @@ Al ingresar deberá iniciar sesión solo ingresando el _nombre_ del usuario.
 ```sh
 http://localhost:8080 - [Muestra el formulario para agregar un nuevo producto al listado y además muestra canal de chat]
 http://localhost:8080/login - [Muestra el formulario realizar el inicio de sesión]
+http://localhost:8080/register - [Muestra el formulario realizar registrar un nuevo usario]
 http://localhost:8080/logout - [Muestra la vista después de finalizar la sesión]
+http://localhost:8080/faillogin - [Vista de error cuando la acción de inicio de sesión termina de forma errónea]
+http://localhost:8080/failregister - [Vista de error cuando la acción de registrar un usuario termina de forma errónea]
 ```
 
 ### Listado de endpoints disponibles en la API
