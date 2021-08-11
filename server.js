@@ -1,4 +1,4 @@
-//Desafío 26 - Autorización y autentificación (parte 1)
+//Desafío 27 - Autorización y autentificación (parte 2)
 //author: Camilo Gálvez Vidal
 const express = require('express');
 const app = express();
@@ -9,6 +9,8 @@ const handlebars = require('express-handlebars');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const bCrypt = require('bcrypt');
+const FacebookStrategy = require('passport-facebook').Strategy;
+const MongoStore = require('connect-mongo');
 require('dotenv').config();
 const controller = require('./src/api/mensajes');
 const config = require('./src/config/config.json');
@@ -23,87 +25,103 @@ let messages = [];
 let products = [];
 
 const puerto = process.env.PORT || config.PORT;
+passport.use(new FacebookStrategy({
+  clientID: process.env.FACEBOOK_CLIENT_ID,
+  clientSecret: process.env.FACEBOOK_CLIENT_SECRET,
+  callbackURL: '/auth/facebook/callback',
+  profileFields: ['id', 'displayName', 'photos', 'emails'],
+  scope: ['email']
+}, function(accessToken, refreshToken, profile, done) {
+    let userProfile = profile;
+    return done(null, userProfile);
+}));
 
-passport.use('login', new LocalStrategy({
-    passReqToCallback : true
-  },
-  (req, username, password, done) => { 
-    Usuario.findOne(
-        { 
-            'username' : username 
-        }, (err, user) => {
-            if (err) return done(err);
-            if (!user){
-                console.log(`Usuario ${username} no existe en la DB`);           
-                return done(null, false)
-            }
-            
-            if (!isValidPassword(user, password)){
-                console.log('Contraseña invalida');
-                return done(null, false) 
-            }
-            return done(null, user);
-        }
-    );
-  })
-);
-
-var isValidPassword = function(usuario, password){
-  return bCrypt.compareSync(password, usuario.password);
-}
-
-passport.use('register', new LocalStrategy({
-    passReqToCallback : true
-  },
-  (req, username, password, done) => {
-    const findOrCreateUser = () => {
-      Usuario.findOne({
-          'username': username
-        }, (err, user) => {
-            if (err){
-                console.log(`Error en registrar: ${err}`);
-                return done(err);
-            }
-            
-            if (user) { // Usuario ya existe
-            console.log('Usuario ya existe en la DB');
-            return done(null, false)
-            } else { // creo nuevo usuario
-                var newUser = new Usuario();
-                newUser.username = username;
-                newUser.password = createHash(password);
-
-                newUser.save((err) => {
-                    if (err) {
-                    console.log(`Error al registrar el usuario: ${err}`);  
-                    throw err;  
-                    }
-                    console.log('Usuario registrado exitosamente!');    
-                    return done(null, newUser);
-                });
-            }
-        }
-      );
-    }
-    process.nextTick(findOrCreateUser);
-  })
-)
-  // Hashea el password
-const createHash = (password) => bCrypt.hashSync(password, bCrypt.genSaltSync(10), null);
-
-// serializa el usuario
-passport.serializeUser(function(user, done) {
-  done(null, user._id);
+passport.serializeUser(function(user, cb) {
+  cb(null, user);
 });
+
+passport.deserializeUser(function(obj, cb) {
+  cb(null, obj);
+});
+
+// passport.use('login', new LocalStrategy({
+//     passReqToCallback : true
+//   },
+//   (req, username, password, done) => { 
+//     Usuario.findOne(
+//         { 
+//             'username' : username 
+//         }, (err, user) => {
+//             if (err) return done(err);
+//             if (!user){
+//                 console.log(`Usuario ${username} no existe en la DB`);           
+//                 return done(null, false)
+//             }
+            
+//             if (!isValidPassword(user, password)){
+//                 console.log('Contraseña invalida');
+//                 return done(null, false) 
+//             }
+//             return done(null, user);
+//         }
+//     );
+//   })
+// );
+
+// const isValidPassword = function(usuario, password){
+//   return bCrypt.compareSync(password, usuario.password);
+// }
+
+// passport.use('register', new LocalStrategy({
+//     passReqToCallback : true
+//   },
+//   (req, username, password, done) => {
+//     const findOrCreateUser = () => {
+//       Usuario.findOne({
+//           'username': username
+//         }, (err, user) => {
+//             if (err){
+//                 console.log(`Error en registrar: ${err}`);
+//                 return done(err);
+//             }
+            
+//             if (user) { // Usuario ya existe
+//             console.log('Usuario ya existe en la DB');
+//             return done(null, false)
+//             } else { // creo nuevo usuario
+//                 var newUser = new Usuario();
+//                 newUser.username = username;
+//                 newUser.password = createHash(password);
+
+//                 newUser.save((err) => {
+//                     if (err) {
+//                     console.log(`Error al registrar el usuario: ${err}`);  
+//                     throw err;  
+//                     }
+//                     console.log('Usuario registrado exitosamente!');    
+//                     return done(null, newUser);
+//                 });
+//             }
+//         }
+//       );
+//     }
+//     process.nextTick(findOrCreateUser);
+//   })
+// )
+//   // Hashea el password
+// const createHash = (password) => bCrypt.hashSync(password, bCrypt.genSaltSync(10), null);
+
+// // serializa el usuario
+// passport.serializeUser(function(user, done) {
+//   done(null, user._id);
+// });
  
-// deserializa el usuario
-passport.deserializeUser(function(id, done) {
-  Usuario.findById(id, function(err, user) {
-    done(err, user);
-  });
-});
-
-const MongoStore = require('connect-mongo');
+// // deserializa el usuario
+// passport.deserializeUser(function(id, done) {
+//   Usuario.findById(id, function(err, user) {
+//     done(err, user);
+//   });
+// });
 const advancedOptions = {
     useNewUrlParser: true, useUnifiedTopology: true
 }
@@ -145,10 +163,13 @@ app.use('/api/productos', routerProductos);
 
 
 //#region MANEJO LOGIN
+// Vistas y llamadas para página login con Facebook
 app.get('/login', (req,res) => {
     if(req.isAuthenticated()){
         res.render("home", {
-            nombre: req.user.username
+          nombre: req.user.displayName,
+          foto: req.user.photos[0].value,
+          email: req.user.emails[0].value      
         })
     }
     else {
@@ -156,30 +177,22 @@ app.get('/login', (req,res) => {
     }
 })
 
-// Vistas y llamadas para página login
-app.post('/login', passport.authenticate('login', { failureRedirect: '/faillogin' }), (req,res) => {
-    res.redirect('/')
+app.get('/auth/facebook', passport.authenticate('facebook'));
+app.get('/auth/facebook/callback', passport.authenticate('facebook',
+  { successRedirect: '/home', 
+    failureRedirect: '/faillogin' }
+));
+
+app.get('/home', (req,res) => {
+   res.redirect('/')        
 })
 
 app.get('/faillogin', (req,res) => {
     res.render('login-error', {});
 })
 
-// Vistas y llamadas para página registro
-app.get('/register', (req,res) => {
-    res.sendFile(process.cwd() + '/public/register.html')
-})
-
-app.post('/register', passport.authenticate('register', { failureRedirect: '/failregister' }), (req,res) => {
-    res.redirect('/') 
-})
-
-app.get('/failregister', (req,res) => {
-    res.render('register-error', {});
-})
-// Vistas y llamadas para página logout
 app.get('/logout', (req,res) => {
-    let nombre = req.user.username
+    let nombre = req.user.displayName
     req.logout()
     res.render("logout", { nombre })
 })

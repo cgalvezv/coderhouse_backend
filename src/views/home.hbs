@@ -1,10 +1,15 @@
 <script src="/socket.io/socket.io.js"></script>
 
-<h1 class="alert alert-success">
-    Bienvenido {{nombre}}
-    <button class="btn btn-warning float-right mt-2" onclick="location.href='/logout'">
-        Desloguear
-    </button>
+<h1 class="alert alert-success p-4">
+    <div class="w-50 float-left">
+        Bienvenido {{nombre}}
+    </div>
+    <div class="float-right">
+        <button class="btn btn-warning" onclick="location.href='/logout'">
+            <b>Desloguear</b><br><img src="{{foto}}" width="75" alt="">
+        </button>
+    </div>
+    <b><a href="#">{{email}}</a></b>
 </h1>
 
 <div class="row">
