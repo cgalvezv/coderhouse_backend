@@ -1,4 +1,4 @@
-//Desafío 27 - Autorización y autentificación (parte 2)
+//Desafío 28 - Global process y Child process
 //author: Camilo Gálvez Vidal
 const express = require('express');
 const app = express();
@@ -7,27 +7,36 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const handlebars = require('express-handlebars');
 const passport = require('passport');
-const LocalStrategy = require('passport-local');
-const bCrypt = require('bcrypt');
 const FacebookStrategy = require('passport-facebook').Strategy;
 const MongoStore = require('connect-mongo');
 require('dotenv').config();
 const controller = require('./src/api/mensajes');
 const config = require('./src/config/config.json');
 const http = require('http').Server(app);
-// le pasamos la constante http a socket.io
+const { fork } = require('child_process');
 const io = require('socket.io')(http);
-const Usuario = require('./src/models/usuario');
 require('./src/database/connection');
 
 
 let messages = [];
 let products = [];
 
-const puerto = process.env.PORT || config.PORT;
+let puerto = process.env.PORT || config.PORT;
+let facebookClientID = process.env.FACEBOOK_CLIENT_ID
+let facebookClientSecret = process.env.FACEBOOK_CLIENT_SECRET
+
+//#region MANEJO DE ARGS
+console.log('ARGS recibidos!')
+process.argv.forEach((arg, index) => {
+    console.log(index + ' -> ' + arg)
+    if (String(arg).toUpperCase().includes('PORT')) puerto = Number(String(arg).split('=')[1]);
+    if (String(arg).toUpperCase().includes('FACEBOOK_CLIENT_ID')) facebookClientID = String(arg).split('=')[1];
+    if (String(arg).toUpperCase().includes('FACEBOOK_CLIENT_SECRET')) facebookClientSecret = String(arg).split('=')[1];
+});
+//#endregion
 passport.use(new FacebookStrategy({
-  clientID: process.env.FACEBOOK_CLIENT_ID,
-  clientSecret: process.env.FACEBOOK_CLIENT_SECRET,
+  clientID: facebookClientID,
+  clientSecret: facebookClientSecret,
   callbackURL: '/auth/facebook/callback',
   profileFields: ['id', 'displayName', 'photos', 'emails'],
   scope: ['email']
@@ -44,84 +53,6 @@ passport.deserializeUser(function(obj, cb) {
   cb(null, obj);
 });
 
-// passport.use('login', new LocalStrategy({
-//     passReqToCallback : true
-//   },
-//   (req, username, password, done) => { 
-//     Usuario.findOne(
-//         { 
-//             'username' : username 
-//         }, (err, user) => {
-//             if (err) return done(err);
-//             if (!user){
-//                 console.log(`Usuario ${username} no existe en la DB`);           
-//                 return done(null, false)
-//             }
-            
-//             if (!isValidPassword(user, password)){
-//                 console.log('Contraseña invalida');
-//                 return done(null, false) 
-//             }
-//             return done(null, user);
-//         }
-//     );
-//   })
-// );
-
-// const isValidPassword = function(usuario, password){
-//   return bCrypt.compareSync(password, usuario.password);
-// }
-
-// passport.use('register', new LocalStrategy({
-//     passReqToCallback : true
-//   },
-//   (req, username, password, done) => {
-//     const findOrCreateUser = () => {
-//       Usuario.findOne({
-//           'username': username
-//         }, (err, user) => {
-//             if (err){
-//                 console.log(`Error en registrar: ${err}`);
-//                 return done(err);
-//             }
-            
-//             if (user) { // Usuario ya existe
-//             console.log('Usuario ya existe en la DB');
-//             return done(null, false)
-//             } else { // creo nuevo usuario
-//                 var newUser = new Usuario();
-//                 newUser.username = username;
-//                 newUser.password = createHash(password);
-
-//                 newUser.save((err) => {
-//                     if (err) {
-//                     console.log(`Error al registrar el usuario: ${err}`);  
-//                     throw err;  
-//                     }
-//                     console.log('Usuario registrado exitosamente!');    
-//                     return done(null, newUser);
-//                 });
-//             }
-//         }
-//       );
-//     }
-//     process.nextTick(findOrCreateUser);
-//   })
-// )
-//   // Hashea el password
-// const createHash = (password) => bCrypt.hashSync(password, bCrypt.genSaltSync(10), null);
-
-// // serializa el usuario
-// passport.serializeUser(function(user, done) {
-//   done(null, user._id);
-// });
- 
-// // deserializa el usuario
-// passport.deserializeUser(function(id, done) {
-//   Usuario.findById(id, function(err, user) {
-//     done(err, user);
-//   });
-// });
 const advancedOptions = {
     useNewUrlParser: true, useUnifiedTopology: true
 }
@@ -177,6 +108,24 @@ app.get('/login', (req,res) => {
     }
 })
 
+app.get('/info', (req,res) => {
+    // Argumentos de entrada
+    const args = JSON.stringify(process.argv);
+    // Nombre de plataforma (Sistema operativo)
+    const so = process.platform;
+    // Versión de NodeJS
+    const vNode = process.version;
+    // Uso de memoria
+    const memory = JSON.stringify(process.memoryUsage(), null, 2);
+    // Path de ejecución
+    const pathExec = process.execPath;
+    // Process ID
+    const processID = process.pid;
+    // Carpeta corriente
+    const cwd = process.cwd();
+    res.render("info", { args, so, vNode, memory, pathExec, processID, cwd })
+})
+
 app.get('/auth/facebook', passport.authenticate('facebook'));
 app.get('/auth/facebook/callback', passport.authenticate('facebook',
   { successRedirect: '/home', 
@@ -185,6 +134,15 @@ app.get('/auth/facebook/callback', passport.authenticate('facebook',
 
 app.get('/home', (req,res) => {
    res.redirect('/')        
+})
+app.get('/randoms', (req,res) => {
+    const lenRandoms = req.query.cant || 100000000
+    const random = fork('./src/utils/random.js')
+    random.send('start');
+    random.send({ lenRandoms });
+    random.on('message', array => {
+        res.end(`${JSON.stringify(array)}`)
+    })      
 })
 
 app.get('/faillogin', (req,res) => {
