@@ -1,7 +1,7 @@
 # Programación Backend - Coderhouse
 ## Autor: _Camilo Gálvez Vidal_
 
-## Desafío 27
+## Desafío 29
 
 
 ### Features
@@ -10,6 +10,9 @@
 - Para el inicio de sesión y el registro de nuevos usuarios se utilizan las dependencias **passport** utilizando la estrategia de login con **Facebook**.
 - Se agrega lógica para la gestión de la sesión, utilizando **Cookie Parser** y **Express Session**.
 - La sesión será almacenada en **Mongo atlas**, utilizando la dependencia **Connect-Mongo**.
+- Se agrega lógica para ejecución en modo **Cluster**.
+- Se agrega lógica para ejecución continua utilizando dependencia **forever**.
+- Se agrega lógica para el manejo de procesos utilizando dependencia **PM2**.
 - Para esta prueba se divide en dos las lógicas donde se probará la conexión. Estas son **Productos** y **Canal de chat**.
   - Para los productos:
     - Se utiliza una API REST para el manejo de productos, desarrollada con **Express**
@@ -63,7 +66,15 @@ npm start
 
 El servidor se ejecutará de manera local en el puerto `8080`.
 
-Al ingresar deberá iniciar sesión solo ingresando el _nombre_ del usuario.
+Al ingresar deberá iniciar sesión con Facebook.
+
+Puede agregar los siguientes argumentos.
+```sh
+PORT: Puerto donde se ejecutará el servidor.
+FACEBOOK_CLIENT_ID: client ID de facebook developer para el inicio de sesión con Facebook.
+FACEBOOK_CLIENT_SECRET: client secret de facebook developer para el inicio de sesión con Facebook.
+CLUSTER o FORK: Si es que desea ejecutarlo en modo cluster o modo fork.
+```
 
 ### Listado de vistas disponibles
 
@@ -74,6 +85,7 @@ http://localhost:8080/register - [Muestra el formulario realizar registrar un nu
 http://localhost:8080/logout - [Muestra la vista después de finalizar la sesión]
 http://localhost:8080/faillogin - [Vista de error cuando la acción de inicio de sesión termina de forma errónea]
 http://localhost:8080/failregister - [Vista de error cuando la acción de registrar un usuario termina de forma errónea]
+http://localhost:8080/info - [Vista de la información del proceso de ejecución]
 ```
 
 ### Listado de endpoints disponibles en la API
