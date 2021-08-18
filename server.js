@@ -15,6 +15,8 @@ const config = require('./src/config/config.json');
 const http = require('http').Server(app);
 const { fork } = require('child_process');
 const io = require('socket.io')(http);
+const cluster = require('cluster')
+const numCPUs = require('os').cpus().length
 require('./src/database/connection');
 
 
@@ -24,6 +26,7 @@ let products = [];
 let puerto = process.env.PORT || config.PORT;
 let facebookClientID = process.env.FACEBOOK_CLIENT_ID
 let facebookClientSecret = process.env.FACEBOOK_CLIENT_SECRET
+let modoEjecucion = 'FORK';
 
 //#region MANEJO DE ARGS
 console.log('ARGS recibidos!')
@@ -32,7 +35,9 @@ process.argv.forEach((arg, index) => {
     if (String(arg).toUpperCase().includes('PORT')) puerto = Number(String(arg).split('=')[1]);
     if (String(arg).toUpperCase().includes('FACEBOOK_CLIENT_ID')) facebookClientID = String(arg).split('=')[1];
     if (String(arg).toUpperCase().includes('FACEBOOK_CLIENT_SECRET')) facebookClientSecret = String(arg).split('=')[1];
+    if (String(arg).toUpperCase().includes('CLUSTER')) modoEjecucion = String(arg);
 });
+
 //#endregion
 passport.use(new FacebookStrategy({
   clientID: facebookClientID,
@@ -123,7 +128,7 @@ app.get('/info', (req,res) => {
     const processID = process.pid;
     // Carpeta corriente
     const cwd = process.cwd();
-    res.render("info", { args, so, vNode, memory, pathExec, processID, cwd })
+    res.render("info", { args, so, vNode, memory, pathExec, processID, cwd, numCPUs })
 })
 
 app.get('/auth/facebook', passport.authenticate('facebook'));
@@ -190,13 +195,40 @@ io.on('connection', async (socket) => {
 });
 //#endregion
 
-// pongo a escuchar el servidor en el puerto indicado
-const server = http.listen(puerto, () => {
-    console.log(`servidor escuchando en http://localhost:${puerto}`);
-});
+if (modoEjecucion === 'CLUSTER') {
+    /* MASTER */
+    if(cluster.isMaster) {
+        console.log(`Número de procesadores presentes: ${numCPUs}`)
+        console.log(`PID MASTER ${process.pid}`)
 
+        for(let i=0; i<numCPUs; i++) {
+            cluster.fork()
+        }
 
-// en caso de error, avisar
-server.on('error', error => {
-    console.log('error en el servidor:', error);
-});
+        cluster.on('exit', worker => {
+            console.log('Worker', worker.process.pid, 'died', new Date().toLocaleString())
+            cluster.fork()
+        })
+    }
+    /* WORKERS */
+    else {
+        // pongo a escuchar el servidor en el puerto indicado
+        const server = http.listen(puerto, err => {
+            if(!err) console.log(`servidor escuchando en http://localhost:${puerto} - PID WORKER ${process.pid}`)
+        })
+        // en caso de error, avisar
+        server.on('error', error => {
+            console.log('error en el servidor:', error);
+        });
+    }
+} else {
+    // pongo a escuchar el servidor en el puerto indicado
+    const server = http.listen(puerto, () => {
+        console.log(`servidor escuchando en http://localhost:${puerto}`);
+    });
+    // en caso de error, avisar
+    server.on('error', error => {
+        console.log('error en el servidor:', error);
+    });
+}
+
