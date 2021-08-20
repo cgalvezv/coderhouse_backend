@@ -10,8 +10,8 @@
     "test": "test",
     "forever_start": "forever start server.js",
     "forever_stop": "forever stop 0",
-    "pm2_fork": "pm2 start server.js --name='CoderhouseFork' --watch -- PORT=8081",
-    "pm2_cluster": "pm2 start server.js --name='CoderhouseCluster' --watch -i max -- PORT=8082",
+    "pm2_fork": "pm2 start server.js --name='CoderhouseServerFork' --watch -- PORT=8081",
+    "pm2_cluster": "pm2 start server.js --name='CoderhouseServerCluster' --watch -i max -- PORT=8082",
     "pm2_stopall": "pm2 delete CoderhouseFork && pm2 delete CoderhouseCluster"
   },
   "repository": {

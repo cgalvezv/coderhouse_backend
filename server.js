@@ -17,6 +17,7 @@ const { fork } = require('child_process');
 const io = require('socket.io')(http);
 const cluster = require('cluster')
 const numCPUs = require('os').cpus().length
+const CON_CHILD_PROCESS_FORK = !false
 require('./src/database/connection');
 
 
@@ -140,15 +141,34 @@ app.get('/auth/facebook/callback', passport.authenticate('facebook',
 app.get('/home', (req,res) => {
    res.redirect('/')        
 })
-app.get('/randoms', (req,res) => {
-    const lenRandoms = req.query.cant || 100000000
-    const random = fork('./src/utils/random.js')
-    random.send('start');
-    random.send({ lenRandoms });
-    random.on('message', array => {
-        res.end(`${JSON.stringify(array)}`)
-    })      
-})
+
+if(CON_CHILD_PROCESS_FORK) {
+    let randoms = fork('./src/utils/random.js');
+
+    const taskId = 0;
+    const tasks = {};
+
+    function addTask(data, callback) {
+        const id = taskId++;
+        randoms.send({id: id, data: data});
+        tasks[id] = callback;
+    };
+
+    randoms.on('message', function(message) {
+        tasks[message.id](message);
+    });
+    
+    app.get('/randoms', async (req,res) => {
+        addTask(req.query.cant || 100000000, randoms => {
+            res.json(randoms)
+        });
+    })
+}
+else {
+    app.get('/randoms', async (req,res) => {
+        res.send('<h2 style="color: orangered;">randoms -> no implementado!</h2>')
+    })
+}
 
 app.get('/faillogin', (req,res) => {
     res.render('login-error', {});
