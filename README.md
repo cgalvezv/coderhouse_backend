@@ -1,7 +1,7 @@
 # Programación Backend - Coderhouse
 ## Autor: _Camilo Gálvez Vidal_
 
-## Desafío 30
+## Desafío 31
 
 
 ### Features
@@ -13,6 +13,8 @@
 - Se agrega lógica para ejecución en modo **Cluster**.
 - Se agrega lógica para ejecución continua utilizando dependencia **forever**.
 - Se agrega lógica para el manejo de procesos utilizando dependencia **PM2**.
+- Se agrega lógica para realizar _logs_ de alto nivel, utilizando la librería **log4js**.
+- Se agrega lógica para comprimir el código utilizando la dependencia **GZip**.
 - Para esta prueba se divide en dos las lógicas donde se probará la conexión. Estas son **Productos** y **Canal de chat**.
   - Para los productos:
     - Se utiliza una API REST para el manejo de productos, desarrollada con **Express**
@@ -86,6 +88,7 @@ http://localhost:8080/logout - [Muestra la vista después de finalizar la sesió
 http://localhost:8080/faillogin - [Vista de error cuando la acción de inicio de sesión termina de forma errónea]
 http://localhost:8080/failregister - [Vista de error cuando la acción de registrar un usuario termina de forma errónea]
 http://localhost:8080/info - [Vista de la información del proceso de ejecución]
+http://localhost:8080/randoms - [Entrega información aleatoria de números]
 ```
 
 ### Listado de endpoints disponibles en la API
