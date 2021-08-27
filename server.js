@@ -184,7 +184,11 @@ if (modoEjecucion === 'CLUSTER') {
         const processID = process.pid;
         // Carpeta corriente
         const cwd = process.cwd();
-        res.render("info", { args, so, vNode, memory, pathExec, processID, cwd, numCPUs })
+        info = { args, so, vNode, memory, pathExec, processID, cwd, numCPUs };
+        // Agregar o remover según el test
+        // console.log(info)
+        //.................................
+        res.render("info", info)
     })
     
     app.get('/auth/facebook', passport.authenticate('facebook'));
@@ -274,11 +278,11 @@ if (modoEjecucion === 'CLUSTER') {
     //#endregion
     // pongo a escuchar el servidor en el puerto indicado
     const server = http.listen(puerto, () => {
-        console.log(`servidor escuchando en http://localhost:${puerto}`);
+        loggerInfo.info(`servidor escuchando en http://localhost:${puerto}`)
     });
     // en caso de error, avisar
     server.on('error', error => {
-        console.log('error en el servidor:', error);
+        loggerInfo.error('error en el servidor:', error)
     });
 }
 

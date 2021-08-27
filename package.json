@@ -5,9 +5,11 @@
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
+    "start_prof": "node --prof server.js",
+    "start_0x": "0x server.js",
     "migrate": "node ./src/database/migration",
     "drop": "node ./src/database/drop",
-    "test": "test",
+    "test": "node benchmark.js",
     "forever_start": "forever start server.js",
     "forever_stop": "forever stop 0",
     "pm2_fork": "pm2 start server.js --name='CoderhouseServerFork' --watch -- PORT=8081",
@@ -30,6 +32,7 @@
   },
   "homepage": "https://github.com/cgalvezv/coderhouse_backend#readme",
   "dependencies": {
+    "autocannon": "^7.4.0",
     "bcrypt": "^5.0.1",
     "compression": "^1.7.4",
     "connect-mongo": "^4.4.1",

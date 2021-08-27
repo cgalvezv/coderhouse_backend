@@ -1,0 +1,869 @@
+Statistical profiling result from isolate-0x104d00000-12310-v8.log, (5622 ticks, 22 unaccounted, 0 excluded).
+
+ [Shared libraries]:
+   ticks  total  nonlib   name
+    130    2.3%          /usr/lib/system/libsystem_kernel.dylib
+    109    1.9%          /usr/lib/system/libsystem_malloc.dylib
+     49    0.9%          /usr/lib/system/libsystem_platform.dylib
+     37    0.7%          /usr/lib/system/libsystem_pthread.dylib
+     19    0.3%          /usr/lib/system/libsystem_c.dylib
+      6    0.1%          /usr/lib/libc++.1.dylib
+      3    0.1%          /usr/lib/libc++abi.dylib
+      1    0.0%          /usr/lib/system/libdispatch.dylib
+
+ [JavaScript]:
+   ticks  total  nonlib   name
+     26    0.5%    0.5%  LazyCompile: *parse /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/parser.js:269:30
+     21    0.4%    0.4%  LazyCompile: *resolve path.js:1032:10
+     17    0.3%    0.3%  LazyCompile: *wrap /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/code-gen.js:101:22
+     13    0.2%    0.2%  LazyCompile: *readPackage internal/modules/cjs/loader.js:245:21
+     11    0.2%    0.2%  LazyCompile: *next /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/parser.js:478:32
+     11    0.2%    0.2%  LazyCompile: *SourceNode_walk /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/source-map/lib/source-node.js:221:53
+     10    0.2%    0.2%  LazyCompile: *normalizeString path.js:52:25
+      6    0.1%    0.1%  LazyCompile: *generateList /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/code-gen.js:143:38
+      6    0.1%    0.1%  LazyCompile: *<anonymous> /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/source-map/lib/source-node.js:174:29
+      5    0.1%    0.1%  LazyCompile: *extend /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/utils.js:28:16
+      5    0.1%    0.1%  LazyCompile: *WhitespaceControl.Program /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/whitespace-control.js:19:48
+      4    0.1%    0.1%  LazyCompile: *invokeAmbiguous /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:699:44
+      4    0.1%    0.1%  LazyCompile: *dirname path.js:1207:10
+      4    0.1%    0.1%  LazyCompile: *anonymous /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/parser.js:12:42
+      4    0.1%    0.1%  LazyCompile: *Module._nodeModulePaths internal/modules/cjs/loader.js:580:37
+      3    0.1%    0.1%  RegExp: (?:\r\n?|\n).*
+      3    0.1%    0.1%  LazyCompile: *render /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/express-handlebars/lib/express-handlebars.js:150:15
+      3    0.1%    0.1%  LazyCompile: *compile /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:73:28
+      3    0.1%    0.1%  LazyCompile: *<anonymous> internal/per_context/primordials.js:23:10
+      2    0.0%    0.0%  RegExp: ^(?:\{\{(~)?\s*else\b)
+      2    0.0%    0.0%  RegExp: ^(?:([^\s!"#%-,\.\/;->@\[-\^`\{-~]+(?=([=~}\s\/.)|]))))
+      2    0.0%    0.0%  LazyCompile: *setupHelperArgs /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:1104:44
+      2    0.0%    0.0%  LazyCompile: *readFileSync fs.js:391:22
+      2    0.0%    0.0%  LazyCompile: *opcode /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/compiler.js:347:26
+      2    0.0%    0.0%  LazyCompile: *next /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/express/lib/router/index.js:176:16
+      2    0.0%    0.0%  LazyCompile: *join path.js:1104:7
+      2    0.0%    0.0%  LazyCompile: *header /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/express/lib/response.js:754:29
+      2    0.0%    0.0%  LazyCompile: *castChunk /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/code-gen.js:52:19
+      2    0.0%    0.0%  LazyCompile: *anonymous /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/parser.js:549:49
+      1    0.0%    0.0%  RegExp: ^[a-zA-Z_][a-zA-Z_0-9]*$
+      1    0.0%    0.0%  RegExp: ^[!#$%&'*+.^_`|~0-9A-Za-z-]+$
+      1    0.0%    0.0%  RegExp: ^(?:\{\{(~)?\^\s*(~)?\}\})
+      1    0.0%    0.0%  RegExp: ^(?:\{\{(~)?>)
+      1    0.0%    0.0%  RegExp: ^(?:\{\{(~)?![\s\S]*?\}\})
+      1    0.0%    0.0%  RegExp: ^(?:\{\{(~)?!--)
+      1    0.0%    0.0%  RegExp: ^(?:'(\\[']|[^'])*')
+      1    0.0%    0.0%  RegExp: \u001b\[\d\d?m
+      1    0.0%    0.0%  RegExp: [^\t\x20-\x7e\x80-\xff]
+      1    0.0%    0.0%  RegExp: [\x00-\x1f\x27\x5c\x7f-\x9f] {1}
+      1    0.0%    0.0%  RegExp: =+$
+      1    0.0%    0.0%  RegExp: (^|\r?\n)\s*?$
+      1    0.0%    0.0%  RegExp: (?:^|\/)\.?\.$
+      1    0.0%    0.0%  RegExp: (?:\r\n?|\n)
+      1    0.0%    0.0%  LazyCompile: *yy.locInfo /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/base.js:42:25
+      1    0.0%    0.0%  LazyCompile: *writeOrBuffer internal/streams/writable.js:334:23
+      1    0.0%    0.0%  LazyCompile: *toString buffer.js:776:46
+      1    0.0%    0.0%  LazyCompile: *template /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/runtime.js:52:18
+      1    0.0%    0.0%  LazyCompile: *strEscape internal/util/inspect.js:464:19
+      1    0.0%    0.0%  LazyCompile: *relative path.js:1128:11
+      1    0.0%    0.0%  LazyCompile: *realpathSync fs.js:1718:22
+      1    0.0%    0.0%  LazyCompile: *quotedString /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/code-gen.js:118:38
+      1    0.0%    0.0%  LazyCompile: *pushProgram /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:615:36
+      1    0.0%    0.0%  LazyCompile: *preparePath /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/helpers.js:63:21
+      1    0.0%    0.0%  LazyCompile: *hidden internal/errors.js:286:25
+      1    0.0%    0.0%  LazyCompile: *formatProperty internal/util/inspect.js:1689:24
+      1    0.0%    0.0%  LazyCompile: *formatPrimitive internal/util/inspect.js:1402:25
+      1    0.0%    0.0%  LazyCompile: *emit events.js:325:44
+      1    0.0%    0.0%  LazyCompile: *deserializeObject /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongoose/node_modules/bson/lib/bson/parser/deserializer.js:43:33
+      1    0.0%    0.0%  LazyCompile: *deserializeObject /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/bson/lib/parser/deserializer.js:52:27
+      1    0.0%    0.0%  LazyCompile: *basename path.js:1238:11
+      1    0.0%    0.0%  LazyCompile: *appendEscaped /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:416:40
+      1    0.0%    0.0%  LazyCompile: *_addListener events.js:404:22
+      1    0.0%    0.0%  LazyCompile: *ContentStatement /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/compiler.js:228:46
+
+ [C++]:
+   ticks  total  nonlib   name
+   2334   41.5%   44.3%  t __ZN2v88internal23CallInterfaceDescriptor29InitializePlatformIndependentEPNS0_27CallInterfaceDescriptorDataE
+   1056   18.8%   20.0%  t __ZN4node2fsL4ReadERKN2v820FunctionCallbackInfoINS1_5ValueEEE
+    395    7.0%    7.5%  T _host_get_clock_service
+    297    5.3%    5.6%  T __ZN4node10contextify17ContextifyContext15CompileFunctionERKN2v820FunctionCallbackInfoINS2_5ValueEEE
+     95    1.7%    1.8%  t __ZN4node2fsL22InternalModuleReadJSONERKN2v820FunctionCallbackInfoINS1_5ValueEEE
+     91    1.6%    1.7%  t __ZN4node2fsL4OpenERKN2v820FunctionCallbackInfoINS1_5ValueEEE
+     61    1.1%    1.2%  T _task_get_special_port
+     47    0.8%    0.9%  T __ZN4node13native_module15NativeModuleEnv15CompileFunctionERKN2v820FunctionCallbackInfoINS2_5ValueEEE
+     45    0.8%    0.9%  T _mach_make_memory_entry_64
+     43    0.8%    0.8%  T __ZN4node2fs5CloseERKN2v820FunctionCallbackInfoINS1_5ValueEEE
+     41    0.7%    0.8%  t __ZN4nodeL11MemoryUsageERKN2v820FunctionCallbackInfoINS0_5ValueEEE
+     41    0.7%    0.8%  T __kernelrpc_mach_port_set_attributes
+     30    0.5%    0.6%  T __ZN4node10StreamBase8JSMethodIXadL_ZNS0_6WritevERKN2v820FunctionCallbackInfoINS2_5ValueEEEEEEEvS7_
+     28    0.5%    0.5%  t __ZN4node2fsL4StatERKN2v820FunctionCallbackInfoINS1_5ValueEEE
+     27    0.5%    0.5%  t __ZN4node2fsL18InternalModuleStatERKN2v820FunctionCallbackInfoINS1_5ValueEEE
+     21    0.4%    0.4%  t __ZN4node6Buffer12_GLOBAL__N_111StringSliceILNS_8encodingE1EEEvRKN2v820FunctionCallbackInfoINS4_5ValueEEE
+     20    0.4%    0.4%  t __ZN2v88internal12StringHasher20HashSequentialStringItEEjPKT_iy
+     18    0.3%    0.3%  t __ZN2v88internal12StringHasher20HashSequentialStringIhEEjPKT_iy
+     17    0.3%    0.3%  t __ZN4node2fsL5FStatERKN2v820FunctionCallbackInfoINS1_5ValueEEE
+     16    0.3%    0.3%  T __ZN4node10StreamBase8JSMethodIXadL_ZNS0_11WriteStringILNS_8encodingE1EEEiRKN2v820FunctionCallbackInfoINS4_5ValueEEEEEEEvS9_
+     15    0.3%    0.3%  t __ZN4nodeL9EnvGetterEN2v85LocalINS0_4NameEEERKNS0_20PropertyCallbackInfoINS0_5ValueEEE
+     15    0.3%    0.3%  T _mach_port_get_attributes
+     13    0.2%    0.2%  T _mach_ports_register
+     11    0.2%    0.2%  T _mach_port_allocate
+     10    0.2%    0.2%  T __ZN4node6crypto4Hash3NewERKN2v820FunctionCallbackInfoINS2_5ValueEEE
+      9    0.2%    0.2%  T __ZN4node2fs16NewFSReqCallbackERKN2v820FunctionCallbackInfoINS1_5ValueEEE
+      7    0.1%    0.1%  t __ZN2v88internal9CopyCharsIhtEEvPT0_PKT_m
+      7    0.1%    0.1%  T __ZN4node6crypto7SSLWrapINS_7TLSWrapEE18GetPeerCertificateERKN2v820FunctionCallbackInfoINS4_5ValueEEE
+      7    0.1%    0.1%  T __ZN4node6crypto6PBKDF2ERKN2v820FunctionCallbackInfoINS1_5ValueEEE
+      6    0.1%    0.1%  t __ZN4node2fsL5LStatERKN2v820FunctionCallbackInfoINS1_5ValueEEE
+      6    0.1%    0.1%  T __ZN4node6crypto13SecureContext12AddRootCertsERKN2v820FunctionCallbackInfoINS2_5ValueEEE
+      5    0.1%    0.1%  t __ZN4node2fsL7ReadDirERKN2v820FunctionCallbackInfoINS1_5ValueEEE
+      5    0.1%    0.1%  t __ZN2v88internalL26Builtin_Impl_HandleApiCallENS0_16BuiltinArgumentsEPNS0_7IsolateE
+      5    0.1%    0.1%  t __ZN2v88internal6String7FlattenEPNS0_7IsolateENS0_6HandleIS1_EENS0_14AllocationTypeE
+      5    0.1%    0.1%  t __ZN2v88internal12_GLOBAL__N_119HandleApiCallHelperILb0EEENS0_11MaybeHandleINS0_6ObjectEEEPNS0_7IsolateENS0_6HandleINS0_10HeapObjectEEESA_NS8_INS0_20FunctionTemplateInfoEEENS8_IS4_EENS0_16BuiltinArgumentsE
+      5    0.1%    0.1%  T __ZN4node6crypto11RandomBytesERKN2v820FunctionCallbackInfoINS1_5ValueEEE
+      5    0.1%    0.1%  T __ZN4node10StreamBase8JSMethodIXadL_ZNS0_11WriteBufferERKN2v820FunctionCallbackInfoINS2_5ValueEEEEEEEvS7_
+      4    0.1%    0.1%  t __ZN2v88internal25FunctionCallbackArguments4CallENS0_15CallHandlerInfoE
+      4    0.1%    0.1%  t __ZN2v88internal17PrototypeIterator7AdvanceEv
+      4    0.1%    0.1%  T _mig_strncpy_zerofill
+      4    0.1%    0.1%  T __ZNK2v85Value10IsFunctionEv
+      4    0.1%    0.1%  T __ZN4node9AsyncWrap19EmitTraceEventAfterENS0_12ProviderTypeEd
+      4    0.1%    0.1%  T __ZN4node7binding18GetInternalBindingERKN2v820FunctionCallbackInfoINS1_5ValueEEE
+      3    0.1%    0.1%  t __ZN4node6Buffer12_GLOBAL__N_114ByteLengthUtf8ERKN2v820FunctionCallbackInfoINS2_5ValueEEE
+      3    0.1%    0.1%  t __ZN4node6Buffer12_GLOBAL__N_111StringWriteILNS_8encodingE1EEEvRKN2v820FunctionCallbackInfoINS4_5ValueEEE
+      3    0.1%    0.1%  t __ZN2v88internal6Object13GetSimpleHashES1_
+      3    0.1%    0.1%  t __ZN2v84base19TemplateHashMapImplIPvS2_NS0_26HashEqualityThenKeyMatcherIS2_PFbS2_S2_EEENS0_23DefaultAllocationPolicyEE6ResizeES7_
+      3    0.1%    0.1%  t __ZN2v84base19TemplateHashMapImplIPvS2_NS0_26HashEqualityThenKeyMatcherIS2_PFbS2_S2_EEENS0_23DefaultAllocationPolicyEE14LookupOrInsertIZNS8_14LookupOrInsertERKS2_jS7_EUlvE_EEPNS0_20TemplateHashMapEntryIS2_S2_EESB_jRKT_S7_
+      3    0.1%    0.1%  T __ZN4node7TCPWrap7ConnectERKN2v820FunctionCallbackInfoINS1_5ValueEEE
+      3    0.1%    0.1%  T __ZN4node6crypto4Hash10HashUpdateERKN2v820FunctionCallbackInfoINS2_5ValueEEE
+      3    0.1%    0.1%  T __ZN4node20InternalMakeCallbackEPNS_11EnvironmentEN2v85LocalINS2_6ObjectEEES5_NS3_INS2_8FunctionEEEiPNS3_INS2_5ValueEEENS_13async_contextE
+      3    0.1%    0.1%  T __ZN2v88internal5Scope28AllocateVariablesRecursivelyEv
+      2    0.0%    0.0%  t __ZNSt3__112__hash_tableIN4node19CleanupHookCallbackENS2_4HashENS2_5EqualENS_9allocatorIS2_EEE4findIS2_EENS_15__hash_iteratorIPNS_11__hash_nodeIS2_PvEEEERKT_
+      2    0.0%    0.0%  t __ZN4node9inspector12_GLOBAL__N_120InspectorConsoleCallERKN2v820FunctionCallbackInfoINS2_5ValueEEE
+      2    0.0%    0.0%  t __ZN4node6Buffer12_GLOBAL__N_111StringSliceILNS_8encodingE5EEEvRKN2v820FunctionCallbackInfoINS4_5ValueEEE
+      2    0.0%    0.0%  t __ZN4node12_GLOBAL__N_111ProcessWrap5SpawnERKN2v820FunctionCallbackInfoINS2_5ValueEEE
+      2    0.0%    0.0%  t __ZN2v88internalL24Builtin_Impl_ArrayConcatENS0_16BuiltinArgumentsEPNS0_7IsolateE
+      2    0.0%    0.0%  t __ZN2v88internalL23Builtin_Impl_ArrayShiftENS0_16BuiltinArgumentsEPNS0_7IsolateE
+      2    0.0%    0.0%  t __ZN2v88internal19SequentialStringKeyItE7IsMatchENS0_6StringE
+      2    0.0%    0.0%  t __ZN2v88internal14LookupIteratorC2EPNS0_7IsolateENS0_6HandleINS0_6ObjectEEENS4_INS0_4NameEEEmNS4_INS0_10JSReceiverEEENS1_13ConfigurationE
+      2    0.0%    0.0%  t __ZN2v88internal12_GLOBAL__N_119HandleApiCallHelperILb1EEENS0_11MaybeHandleINS0_6ObjectEEEPNS0_7IsolateENS0_6HandleINS0_10HeapObjectEEESA_NS8_INS0_20FunctionTemplateInfoEEENS8_IS4_EENS0_16BuiltinArgumentsE
+      2    0.0%    0.0%  T _guarded_open_np
+      2    0.0%    0.0%  T __ZN4node9AsyncWrap12MakeCallbackEN2v85LocalINS1_8FunctionEEEiPNS2_INS1_5ValueEEE
+      2    0.0%    0.0%  T __ZN4node7TTYWrap3NewERKN2v820FunctionCallbackInfoINS1_5ValueEEE
+      2    0.0%    0.0%  T __ZN4node6crypto4Hash10HashDigestERKN2v820FunctionCallbackInfoINS2_5ValueEEE
+      2    0.0%    0.0%  T __ZN4node6crypto13SecureContext4InitERKN2v820FunctionCallbackInfoINS2_5ValueEEE
+      2    0.0%    0.0%  T __ZN4node6crypto13SecureContext10SetCiphersERKN2v820FunctionCallbackInfoINS2_5ValueEEE
+      2    0.0%    0.0%  T __ZN4node2fs9FSReqBaseD2Ev
+      2    0.0%    0.0%  T __ZN4node22EmitToJSStreamListener13OnStreamAllocEm
+      2    0.0%    0.0%  T __ZN4node21InternalCallbackScope5CloseEv
+      2    0.0%    0.0%  T __ZN4node12NodePlatform22CurrentClockTimeMillisEv
+      2    0.0%    0.0%  T __ZN2v88internal8Builtins14builtin_handleEi
+      2    0.0%    0.0%  T __ZN2v88internal27Builtin_FunctionConstructorEiPmPNS0_7IsolateE
+      2    0.0%    0.0%  T __ZN2v88Function4CallENS_5LocalINS_7ContextEEENS1_INS_5ValueEEEiPS5_
+      2    0.0%    0.0%  T __ZN2v87Context4ExitEv
+      1    0.0%    0.0%  t __system_version_compat_open_shim
+      1    0.0%    0.0%  t __ZZN4node11Environment27RunAndClearNativeImmediatesEbENK3$_7clEPNS_13CallbackQueueIvJPS0_EEE
+      1    0.0%    0.0%  t __ZNSt3__16vectorIPN2v88internal8compiler4NodeENS2_13ZoneAllocatorIS5_EEE8__appendEm
+      1    0.0%    0.0%  t __ZNSt3__16vectorIN2v88internal10ZoneVectorIiEENS2_13ZoneAllocatorIS4_EEE24__emplace_back_slow_pathIJS4_EEEvDpOT_
+      1    0.0%    0.0%  t __ZNSt3__16vectorIN2v86GlobalINS1_6ObjectEEENS_9allocatorIS4_EEE8__appendEm
+      1    0.0%    0.0%  t __ZNSt3__124__put_character_sequenceIcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_PKS4_m
+      1    0.0%    0.0%  t __ZNSt3__116__pad_and_outputIcNS_11char_traitsIcEEEENS_19ostreambuf_iteratorIT_T0_EES6_PKS4_S8_S8_RNS_8ios_baseES4_
+      1    0.0%    0.0%  t __ZNSt3__112__hash_tableINS_17__hash_value_typeIN4node13FastStringKeyENS2_17BaseObjectPtrImplINS2_10BaseObjectELb0EEEEENS_22__unordered_map_hasherIS3_S7_NS3_4HashELb1EEENS_21__unordered_map_equalIS3_S7_NS_8equal_toIS3_EELb1EEENS_9allocatorIS7_EEE4findIS3_EENS_15__hash_iteratorIPNS_11__hash_nodeIS7_PvEEEERKT_
+      1    0.0%    0.0%  t __ZNSt3__112__hash_tableIN4node19CleanupHookCallbackENS2_4HashENS2_5EqualENS_9allocatorIS2_EEE14__erase_uniqueIS2_EEmRKT_
+      1    0.0%    0.0%  t __ZNK4node32NonOwningExternalTwoByteResource4dataEv
+      1    0.0%    0.0%  t __ZNK2v88internal10ScopedListIPNS0_9StatementEPvE6CopyToEPNS0_8ZoneListIS3_EEPNS0_4ZoneE
+      1    0.0%    0.0%  t __ZN4nodeL6HrtimeERKN2v820FunctionCallbackInfoINS0_5ValueEEE
+      1    0.0%    0.0%  t __ZN4node4utilL14SetHiddenValueERKN2v820FunctionCallbackInfoINS1_5ValueEEE
+      1    0.0%    0.0%  t __ZN4node2osL10GetCPUInfoERKN2v820FunctionCallbackInfoINS1_5ValueEEE
+      1    0.0%    0.0%  t __ZN4node2fs13FSReqCallbackD0Ev
+      1    0.0%    0.0%  t __ZN4node15AllocatedBuffer6ResizeEm
+      1    0.0%    0.0%  t __ZN4node12_GLOBAL__N_16Parser7ExecuteERKN2v820FunctionCallbackInfoINS2_5ValueEEE
+      1    0.0%    0.0%  t __ZN4node12_GLOBAL__N_16Parser7ExecuteEPKcm
+      1    0.0%    0.0%  t __ZN4node12_GLOBAL__N_16Parser15on_header_valueEPKcm
+      1    0.0%    0.0%  t __ZN4node12_GLOBAL__N_117IsArgumentsObjectERKN2v820FunctionCallbackInfoINS1_5ValueEEE
+      1    0.0%    0.0%  t __ZN4node12_GLOBAL__N_111GetLibuvNowERKN2v820FunctionCallbackInfoINS1_5ValueEEE
+      1    0.0%    0.0%  t __ZN4node10BaseObject17decrease_refcountEv
+      1    0.0%    0.0%  t __ZN2v88internal7JSArray10SetContentENS0_6HandleIS1_EENS2_INS0_14FixedArrayBaseEEE
+      1    0.0%    0.0%  t __ZN2v88internal22HandleScopeImplementer12EnterContextENS0_7ContextE
+      1    0.0%    0.0%  t __ZN2v88internal14LookupIterator3KeyC2EPNS0_7IsolateENS0_6HandleINS0_6ObjectEEE
+      1    0.0%    0.0%  t __ZN2v88internal12_GLOBAL__N_133MatchArrayElementsKindToArgumentsEPNS0_7IsolateENS0_6HandleINS0_7JSArrayEEEPNS0_16BuiltinArgumentsEii
+      1    0.0%    0.0%  t __ZN2v88internal11StringShape33DispatchToSpecificTypeWithoutCastIZNS1_22DispatchToSpecificTypeIZNS0_6String3GetEiE19StringGetDispatchertJRiEEET0_S4_DpOT1_E17CastingDispatchertJRS4_S6_EEES7_SA_
+      1    0.0%    0.0%  t __ZN2v88Platform33CallLowPriorityTaskOnWorkerThreadENSt3__110unique_ptrINS_4TaskENS1_14default_deleteIS3_EEEE
+      1    0.0%    0.0%  T _task_info
+      1    0.0%    0.0%  T _posix_spawnattr_destroy
+      1    0.0%    0.0%  T _mach_timebase_info
+      1    0.0%    0.0%  T __kernelrpc_vm_remap
+      1    0.0%    0.0%  T ___open
+      1    0.0%    0.0%  T __ZZN4node10BaseObject8MakeWeakEvENUlRKN2v816WeakCallbackInfoIS0_EEE_8__invokeES5_
+      1    0.0%    0.0%  T __ZThn8_N4node22PerIsolatePlatformData19PostNonNestableTaskENSt3__110unique_ptrIN2v84TaskENS1_14default_deleteIS4_EEEE
+      1    0.0%    0.0%  T __ZNK4node11Environment14PrintSyncTraceEv
+      1    0.0%    0.0%  T __ZNK2v88internal15FunctionLiteral4kindEv
+      1    0.0%    0.0%  T __ZNK2v88internal10Expression14IsPropertyNameEv
+      1    0.0%    0.0%  T __ZNK2v88internal10Expression13IsPrivateNameEv
+      1    0.0%    0.0%  T __ZN4node9AsyncWrap21EmitTraceEventDestroyEv
+      1    0.0%    0.0%  T __ZN4node7tracing16TraceEventHelper20GetTracingControllerEv
+      1    0.0%    0.0%  T __ZN4node7TTYWrap5IsTTYERKN2v820FunctionCallbackInfoINS1_5ValueEEE
+      1    0.0%    0.0%  T __ZN4node7TLSWrap6EncOutEv
+      1    0.0%    0.0%  T __ZN4node7TLSWrap5StartERKN2v820FunctionCallbackInfoINS1_5ValueEEE
+      1    0.0%    0.0%  T __ZN4node7TLSWrap12InvokeQueuedEiPKc
+      1    0.0%    0.0%  T __ZN4node6crypto7NodeBIO9FreeEmptyEv
+      1    0.0%    0.0%  T __ZN4node30ReportWritesToJSStreamListener24OnStreamAfterReqFinishedEPNS_9StreamReqEi
+      1    0.0%    0.0%  T __ZN4node2fs15FSReqAfterScopeC2EPNS0_9FSReqBaseEP7uv_fs_s
+      1    0.0%    0.0%  T __ZN4node2fs15FSReqAfterScope5ClearEv
+      1    0.0%    0.0%  T __ZN4node2fs13FSReqCallback7ResolveEN2v85LocalINS2_5ValueEEE
+      1    0.0%    0.0%  T __ZN4node26DTRACE_HTTP_SERVER_REQUESTERKN2v820FunctionCallbackInfoINS0_5ValueEEE
+      1    0.0%    0.0%  T __ZN4node24MakeLibuvRequestCallbackI7uv_fs_sPFvPS1_EE7WrapperES2_
+      1    0.0%    0.0%  T __ZN4node11Environment9RunTimersEP10uv_timer_s
+      1    0.0%    0.0%  T __ZN4node11Environment14CheckImmediateEP10uv_check_s
+      1    0.0%    0.0%  T __ZN4node10StreamBase18CallJSOnreadMethodElN2v85LocalINS1_11ArrayBufferEEEmNS0_18StreamBaseJSChecksE
+      1    0.0%    0.0%  T __ZN2v88internal5Scope27ResolveVariablesRecursivelyEPS1_
+      1    0.0%    0.0%  T __ZN2v88internal5Scope21DeserializeScopeChainEPNS0_7IsolateEPNS0_4ZoneENS0_9ScopeInfoEPNS0_16DeclarationScopeEPNS0_15AstValueFactoryENS1_19DeserializationModeE
+      1    0.0%    0.0%  T __ZN2v88internal5Scope18AsDeclarationScopeEv
+      1    0.0%    0.0%  T __ZN2v88internal5Scope16GetReceiverScopeEv
+      1    0.0%    0.0%  T __ZN2v88internal5Scope15GetClosureScopeEv
+      1    0.0%    0.0%  T __ZN2v88internal5Scope15DeclareVariableEPNS0_11DeclarationEPKNS0_12AstRawStringEiNS0_12VariableModeENS0_12VariableKindENS0_18InitializationFlagEPbSA_SA_
+      1    0.0%    0.0%  T __ZN2v88internal35Builtin_ObjectGetOwnPropertySymbolsEiPmPNS0_7IsolateE
+      1    0.0%    0.0%  T __ZN2v88internal25FunctionCallbackArgumentsC1EPNS0_7IsolateENS0_6ObjectENS0_10HeapObjectES4_S5_Pmi
+      1    0.0%    0.0%  T __ZN2v88internal16DeclarationScopeC2EPNS0_4ZoneEPNS0_15AstValueFactoryENS0_8REPLModeE
+      1    0.0%    0.0%  T __ZN2v88internal16DeclarationScope17AllocateVariablesEPNS0_9ParseInfoE
+      1    0.0%    0.0%  T __ZN2v88internal15Builtin_DateNowEiPmPNS0_7IsolateE
+      1    0.0%    0.0%  T __ZN2v88internal12AstRawString7CompareEPvS2_
+      1    0.0%    0.0%  T __ZN2v88TryCatchD2Ev
+      1    0.0%    0.0%  T __ZN2v87Isolate7SetIdleEb
+      1    0.0%    0.0%  T __ZN2v87Context5EnterEv
+      1    0.0%    0.0%  T __ZN2v87Context29GetNumberOfEmbedderDataFieldsEv
+      1    0.0%    0.0%  T __ZN2v86String14NewFromOneByteEPNS_7IsolateEPKhNS_13NewStringTypeEi
+      1    0.0%    0.0%  T __ZN2v86String11NewFromUtf8EPNS_7IsolateEPKcNS_13NewStringTypeEi
+      1    0.0%    0.0%  T __ZN2v86Object3SetENS_5LocalINS_7ContextEEENS1_INS_5ValueEEES5_
+      1    0.0%    0.0%  T __ZN2v86Object32SetAlignedPointerInInternalFieldEiPv
+      1    0.0%    0.0%  T __ZN2v820EscapableHandleScope6EscapeEPm
+      1    0.0%    0.0%  T __ZN2v811HandleScopeD1Ev
+
+ [Summary]:
+   ticks  total  nonlib   name
+    213    3.8%    4.0%  JavaScript
+   5033   89.5%   95.5%  C++
+    280    5.0%    5.3%  GC
+    354    6.3%          Shared libraries
+     22    0.4%          Unaccounted
+
+ [C++ entry points]:
+   ticks    cpp   total   name
+   2260   51.7%   40.2%  t __ZN2v88internal23CallInterfaceDescriptor29InitializePlatformIndependentEPNS0_27CallInterfaceDescriptorDataE
+   1932   44.2%   34.4%  T __ZN2v88internal21Builtin_HandleApiCallEiPmPNS0_7IsolateE
+     61    1.4%    1.1%  T _task_get_special_port
+     28    0.6%    0.5%  T __ZN2v88internal21Builtin_JsonStringifyEiPmPNS0_7IsolateE
+     14    0.3%    0.2%  T __ZN2v88internal17Builtin_JsonParseEiPmPNS0_7IsolateE
+     13    0.3%    0.2%  T _mach_ports_register
+     11    0.3%    0.2%  T __ZN2v88internal19Builtin_ArrayConcatEiPmPNS0_7IsolateE
+      8    0.2%    0.1%  T __ZN2v88internal28Builtin_ObjectDefinePropertyEiPmPNS0_7IsolateE
+      6    0.1%    0.1%  T __ZN2v88internal20Builtin_ArrayUnshiftEiPmPNS0_7IsolateE
+      6    0.1%    0.1%  T __ZN2v88internal15Builtin_DateNowEiPmPNS0_7IsolateE
+      5    0.1%    0.1%  T __ZN2v88internal27Builtin_FunctionConstructorEiPmPNS0_7IsolateE
+      5    0.1%    0.1%  T __ZN2v88internal18Builtin_ObjectSealEiPmPNS0_7IsolateE
+      4    0.1%    0.1%  T __ZN2v88internal18Builtin_ArrayShiftEiPmPNS0_7IsolateE
+      3    0.1%    0.1%  T __ZN2v88internal16Builtin_ArrayPopEiPmPNS0_7IsolateE
+      2    0.0%    0.0%  t __ZN4node10task_queueL13RunMicrotasksERKN2v820FunctionCallbackInfoINS1_5ValueEEE
+      2    0.0%    0.0%  T __ZN2v88internal35Builtin_ObjectGetOwnPropertySymbolsEiPmPNS0_7IsolateE
+      2    0.0%    0.0%  T __ZN2v88internal32Builtin_GlobalDecodeURIComponentEiPmPNS0_7IsolateE
+      2    0.0%    0.0%  T __ZN2v88internal24Builtin_ErrorConstructorEiPmPNS0_7IsolateE
+      2    0.0%    0.0%  T __ZN2v88internal23Builtin_DateConstructorEiPmPNS0_7IsolateE
+      1    0.0%    0.0%  t __ZNSt3__112__hash_tableINS_17__hash_value_typeIN4node13FastStringKeyENS2_17BaseObjectPtrImplINS2_10BaseObjectELb0EEEEENS_22__unordered_map_hasherIS3_S7_NS3_4HashELb1EEENS_21__unordered_map_equalIS3_S7_NS_8equal_toIS3_EELb1EEENS_9allocatorIS7_EEE4findIS3_EENS_15__hash_iteratorIPNS_11__hash_nodeIS7_PvEEEERKT_
+      1    0.0%    0.0%  t __ZN4node3url12_GLOBAL__N_15ParseERKN2v820FunctionCallbackInfoINS2_5ValueEEE
+      1    0.0%    0.0%  T _mach_timebase_info
+      1    0.0%    0.0%  T __ZNK4node11Environment14PrintSyncTraceEv
+      1    0.0%    0.0%  T __ZN4node7tracing16TraceEventHelper20GetTracingControllerEv
+
+ [Bottom up (heavy) profile]:
+  Note: percentage shows a share of a particular caller in the total
+  amount of its parent calls.
+  Callers occupying less than 1.0% are not shown.
+
+   ticks parent  name
+   2334   41.5%  t __ZN2v88internal23CallInterfaceDescriptor29InitializePlatformIndependentEPNS0_27CallInterfaceDescriptorDataE
+    768   32.9%    t __ZN2v88internal23CallInterfaceDescriptor29InitializePlatformIndependentEPNS0_27CallInterfaceDescriptorDataE
+     74    9.6%      t __ZN2v88internal23CallInterfaceDescriptor29InitializePlatformIndependentEPNS0_27CallInterfaceDescriptorDataE
+      7    9.5%        LazyCompile: ~readPackage internal/modules/cjs/loader.js:245:21
+      6   85.7%          LazyCompile: ~readPackageScope internal/modules/cjs/loader.js:276:26
+      4   66.7%            LazyCompile: ~trySelf internal/modules/cjs/loader.js:396:17
+      2   33.3%            LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1077:37
+      1   14.3%          LazyCompile: ~resolveExports internal/modules/cjs/loader.js:427:24
+      1  100.0%            LazyCompile: ~Module._findPath internal/modules/cjs/loader.js:449:28
+      4    5.4%        LazyCompile: ~ServerDescription /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongoose/node_modules/mongodb/lib/core/sdam/server_description.js:59:14
+      4  100.0%          LazyCompile: ~<anonymous> /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongoose/node_modules/mongodb/lib/core/sdam/server.js:152:51
+      3   75.0%            LazyCompile: ~emit events.js:325:44
+      1   25.0%            LazyCompile: *emit events.js:325:44
+      3    4.1%        LazyCompile: ~pipe /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/send/index.js:510:43
+      3  100.0%          LazyCompile: ~serveStatic /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/serve-static/index.js:72:31
+      3  100.0%            LazyCompile: ~handle /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/express/lib/router/layer.js:86:49
+      3    4.1%        LazyCompile: ~formatPrimitive internal/util/inspect.js:1402:25
+      3  100.0%          LazyCompile: ~formatValue internal/util/inspect.js:746:21
+      2   66.7%            LazyCompile: ~formatProperty internal/util/inspect.js:1689:24
+      1   33.3%            LazyCompile: *formatProperty internal/util/inspect.js:1689:24
+      3    4.1%        LazyCompile: *quotedString /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/code-gen.js:118:38
+      3  100.0%          LazyCompile: ~pushSource /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:881:34
+      2   66.7%            LazyCompile: ~appendEscaped /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:416:40
+      1   33.3%            LazyCompile: ~append /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:394:26
+      2    2.7%        LazyCompile: ~wrapSafe internal/modules/cjs/loader.js:969:18
+      2  100.0%          LazyCompile: ~Module._compile internal/modules/cjs/loader.js:1022:37
+      2  100.0%            LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1077:37
+      2    2.7%        LazyCompile: ~normalize path.js:1067:12
+      2  100.0%          LazyCompile: ~join path.js:1104:7
+      1   50.0%            LazyCompile: ~pipe /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/send/index.js:510:43
+      1   50.0%            LazyCompile: ~makeAbs /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/glob/common.js:197:18
+      2    2.7%        LazyCompile: ~header /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/express/lib/response.js:754:29
+      2  100.0%          LazyCompile: ~contentType /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/express/lib/response.js:594:32
+      2  100.0%            LazyCompile: ~send /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/express/lib/response.js:107:25
+      2    2.7%        LazyCompile: ~escapeExpression /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/utils.js:77:26
+      2  100.0%          Eval: ~<anonymous> :1:20
+      2  100.0%            LazyCompile: ~main /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/runtime.js:207:18
+      2    2.7%        LazyCompile: ~_renderTemplate /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/express-handlebars/lib/express-handlebars.js:260:18
+      2  100.0%          LazyCompile: ~render /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/express-handlebars/lib/express-handlebars.js:150:15
+      2  100.0%            t __ZN2v88internal23CallInterfaceDescriptor29InitializePlatformIndependentEPNS0_27CallInterfaceDescriptorDataE
+      2    2.7%        LazyCompile: ~<anonymous> internal/fs/utils.js:325:35
+      2  100.0%          LazyCompile: *hidden internal/errors.js:286:25
+      2  100.0%            LazyCompile: ~<anonymous> internal/fs/utils.js:624:38
+      2    2.7%        LazyCompile: *next /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/parser.js:478:32
+      2  100.0%          LazyCompile: ~lex /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/parser.js:525:30
+      2  100.0%            LazyCompile: ~lex /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/parser.js:525:30
+      2    2.7%        LazyCompile: *Module._findPath internal/modules/cjs/loader.js:449:28
+      2  100.0%          LazyCompile: *Module._resolveFilename internal/modules/cjs/loader.js:801:35
+      2  100.0%            LazyCompile: *Module._load internal/modules/cjs/loader.js:709:24
+      2    2.7%        LazyCompile: *<anonymous> internal/per_context/primordials.js:23:10
+      2  100.0%          LazyCompile: ~readPackageScope internal/modules/cjs/loader.js:276:26
+      2  100.0%            LazyCompile: ~trySelf internal/modules/cjs/loader.js:396:17
+      1    1.4%        LazyCompile: ~write /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongoose/node_modules/mongodb/lib/cmap/connection.js:301:15
+      1  100.0%          LazyCompile: ~_command /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongoose/node_modules/mongodb/lib/core/wireprotocol/command.js:41:18
+      1  100.0%            LazyCompile: ~command /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongoose/node_modules/mongodb/lib/core/wireprotocol/command.js:19:17
+      1    1.4%        LazyCompile: ~validateName /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/node-fetch/lib/index.js:673:22
+      1  100.0%          LazyCompile: ~append /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/node-fetch/lib/index.js:831:8
+      1  100.0%            LazyCompile: ~Headers /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/node-fetch/lib/index.js:713:13
+      1    1.4%        LazyCompile: ~toIdentifier /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/toidentifier/index.js:22:23
+      1  100.0%          LazyCompile: ~forEachCode /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/http-errors/index.js:243:38
+      1  100.0%            t __ZN2v88internal23CallInterfaceDescriptor29InitializePlatformIndependentEPNS0_27CallInterfaceDescriptorDataE
+      1    1.4%        LazyCompile: ~splitRoot fs.js:1681:33
+      1  100.0%          LazyCompile: *realpathSync fs.js:1718:22
+      1  100.0%            LazyCompile: ~toRealPath internal/modules/cjs/loader.js:348:20
+      1    1.4%        LazyCompile: ~posix /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/path-is-absolute/index.js:3:15
+      1  100.0%          LazyCompile: ~setopts /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/glob/common.js:47:18
+      1  100.0%            LazyCompile: ~Glob /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/glob/glob.js:118:15
+      1    1.4%        LazyCompile: ~populateMaps /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mime-types/index.js:154:23
+      1  100.0%          Eval: ~<anonymous> /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mime-types/index.js:1:1
+      1  100.0%            LazyCompile: ~Module._compile internal/modules/cjs/loader.js:1022:37
+      1    1.4%        LazyCompile: ~parseCertString internal/tls.js:10:25
+      1  100.0%          LazyCompile: ~translatePeerCertificate _tls_common.js:311:69
+      1  100.0%            LazyCompile: ~TLSSocket.getPeerCertificate _tls_wrap.js:972:50
+      1    1.4%        LazyCompile: ~parse /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/minimatch/minimatch.js:271:16
+      1  100.0%          t __ZN2v88internal23CallInterfaceDescriptor29InitializePlatformIndependentEPNS0_27CallInterfaceDescriptorDataE
+      1  100.0%            LazyCompile: ~<anonymous> /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/minimatch/minimatch.js:181:26
+      1    1.4%        LazyCompile: ~parse /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/content-type/index.js:106:16
+      1  100.0%          LazyCompile: ~setCharset /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/express/lib/utils.js:250:41
+      1  100.0%            LazyCompile: ~send /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/express/lib/response.js:107:25
+      1    1.4%        LazyCompile: ~onParserExecuteCommon _http_server.js:662:31
+      1  100.0%          LazyCompile: ~onParserExecute _http_server.js:605:25
+      1    1.4%        LazyCompile: ~objectLiteral /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/code-gen.js:123:40
+      1  100.0%          LazyCompile: ~objectLiteral /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:1002:40
+      1  100.0%            LazyCompile: ~setupHelperArgs /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:1104:44
+      1    1.4%        LazyCompile: ~next /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/parser.js:478:32
+      1  100.0%          LazyCompile: ~lex /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/parser.js:525:30
+      1  100.0%            LazyCompile: ~lex /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/parser.js:295:25
+      1    1.4%        LazyCompile: ~messageHandler /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongoose/node_modules/mongodb/lib/cmap/connection.js:224:33
+      1  100.0%          LazyCompile: ~emit events.js:325:44
+      1  100.0%            LazyCompile: ~processIncomingData /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongoose/node_modules/mongodb/lib/cmap/message_stream.js:103:29
+      1    1.4%        LazyCompile: ~messageHandler /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongodb/lib/cmap/connection.js:417:35
+      1  100.0%          LazyCompile: ~emit events.js:325:44
+      1  100.0%            LazyCompile: ~processIncomingData /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongodb/lib/cmap/message_stream.js:79:29
+      1    1.4%        LazyCompile: ~lookup /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mime/mime.js:102:19
+      1  100.0%          LazyCompile: ~header /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/express/lib/response.js:754:29
+      1  100.0%            LazyCompile: ~json /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/express/lib/response.js:239:25
+      1    1.4%        LazyCompile: ~inspect internal/util/inspect.js:284:17
+      1  100.0%          LazyCompile: ~formatWithOptionsInternal internal/util/inspect.js:1902:35
+      1  100.0%            LazyCompile: ~formatWithOptions internal/util/inspect.js:1894:27
+      1    1.4%        LazyCompile: ~id /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/helpers.js:44:12
+      1  100.0%          LazyCompile: ~anonymous /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/parser.js:12:42
+      1  100.0%            LazyCompile: ~parse /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/parser.js:269:30
+      1    1.4%        LazyCompile: ~formatProperty internal/util/inspect.js:1689:24
+      1  100.0%          LazyCompile: ~formatRaw internal/util/inspect.js:815:19
+      1  100.0%            LazyCompile: ~formatValue internal/util/inspect.js:746:21
+      1    1.4%        LazyCompile: ~fn internal/util.js:306:14
+      1  100.0%          LazyCompile: ~_getFile /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/express-handlebars/lib/express-handlebars.js:299:17
+      1  100.0%            LazyCompile: *render /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/express-handlebars/lib/express-handlebars.js:150:15
+      1    1.4%        LazyCompile: ~databaseNamespace /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongoose/node_modules/mongodb/lib/core/wireprotocol/shared.js:96:27
+      1  100.0%          LazyCompile: ~_command /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongoose/node_modules/mongodb/lib/core/wireprotocol/command.js:41:18
+      1  100.0%            LazyCompile: ~command /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongoose/node_modules/mongodb/lib/core/wireprotocol/command.js:19:17
+      1    1.4%        LazyCompile: ~addLevelMethods /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/log4js/lib/logger.js:110:25
+      1  100.0%          t __ZN2v88internal23CallInterfaceDescriptor29InitializePlatformIndependentEPNS0_27CallInterfaceDescriptorDataE
+      1  100.0%            Eval: ~<anonymous> /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/log4js/lib/logger.js:1:1
+      1    1.4%        LazyCompile: ~_command /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongoose/node_modules/mongodb/lib/core/wireprotocol/command.js:41:18
+      1  100.0%          LazyCompile: ~command /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongoose/node_modules/mongodb/lib/core/wireprotocol/command.js:19:17
+      1  100.0%            LazyCompile: ~command /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongoose/node_modules/mongodb/lib/cmap/connection.js:174:10
+      1    1.4%        LazyCompile: ~SourceNode_add /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/source-map/lib/source-node.js:172:51
+      1  100.0%          LazyCompile: ~SourceNode /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/source-map/lib/source-node.js:35:20
+      1  100.0%            LazyCompile: ~wrap /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/code-gen.js:101:22
+      1    1.4%        LazyCompile: ~Module._findPath internal/modules/cjs/loader.js:449:28
+      1  100.0%          LazyCompile: ~Module._resolveFilename internal/modules/cjs/loader.js:801:35
+      1  100.0%            LazyCompile: ~Module._load internal/modules/cjs/loader.js:709:24
+      1    1.4%        LazyCompile: ~<anonymous> /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongoose/node_modules/mongodb/lib/core/sdam/topology_description.js:403:13
+      1  100.0%          t __ZN2v88internal23CallInterfaceDescriptor29InitializePlatformIndependentEPNS0_27CallInterfaceDescriptorDataE
+      1  100.0%            LazyCompile: ~updateRsFromPrimary /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongoose/node_modules/mongodb/lib/core/sdam/topology_description.js:339:29
+      1    1.4%        LazyCompile: ~<anonymous> /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongodb/lib/sdam/server.js:43:71
+      1  100.0%          LazyCompile: ~emit events.js:325:44
+      1  100.0%            LazyCompile: ~<anonymous> /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongodb/lib/cmap/connection_pool.js:377:34
+      1    1.4%        LazyCompile: *setupHelperArgs /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:1104:44
+      1  100.0%          LazyCompile: *invokeAmbiguous /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:699:44
+      1  100.0%            LazyCompile: *compile /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:73:28
+      1    1.4%        LazyCompile: *parse /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/minimatch/minimatch.js:271:16
+      1  100.0%          t __ZN2v88internal23CallInterfaceDescriptor29InitializePlatformIndependentEPNS0_27CallInterfaceDescriptorDataE
+      1  100.0%            LazyCompile: ~<anonymous> /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/minimatch/minimatch.js:181:26
+      1    1.4%        LazyCompile: *formatPrimitive internal/util/inspect.js:1402:25
+      1  100.0%          LazyCompile: ~formatValue internal/util/inspect.js:746:21
+      1  100.0%            LazyCompile: *formatProperty internal/util/inspect.js:1689:24
+      1    1.4%        LazyCompile: *compile /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:73:28
+      1  100.0%          LazyCompile: *render /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/express-handlebars/lib/express-handlebars.js:150:15
+      1  100.0%            t __ZN2v88internal23CallInterfaceDescriptor29InitializePlatformIndependentEPNS0_27CallInterfaceDescriptorDataE
+      1    1.4%        LazyCompile: *appendEscaped /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:416:40
+      1  100.0%          LazyCompile: *compile /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:73:28
+      1  100.0%            LazyCompile: *render /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/express-handlebars/lib/express-handlebars.js:150:15
+      1    1.4%        LazyCompile: *<anonymous> internal/fs/utils.js:325:35
+      1  100.0%          LazyCompile: *hidden internal/errors.js:286:25
+      1  100.0%            LazyCompile: ~<anonymous> internal/fs/utils.js:624:38
+     21    2.7%      LazyCompile: *next /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/parser.js:478:32
+     20   95.2%        LazyCompile: *parse /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/parser.js:269:30
+     20  100.0%          LazyCompile: ~parseWithoutProcessing /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/base.js:33:32
+     11   55.0%            LazyCompile: ~parse /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/base.js:51:15
+      9   45.0%            LazyCompile: *render /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/express-handlebars/lib/express-handlebars.js:150:15
+      1    4.8%        LazyCompile: ~lex /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/parser.js:525:30
+      1  100.0%          LazyCompile: *parse /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/parser.js:269:30
+      1  100.0%            LazyCompile: ~parseWithoutProcessing /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/base.js:33:32
+     18    2.3%      LazyCompile: *compile /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:73:28
+     11   61.1%        LazyCompile: *render /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/express-handlebars/lib/express-handlebars.js:150:15
+     11  100.0%          t __ZN2v88internal23CallInterfaceDescriptor29InitializePlatformIndependentEPNS0_27CallInterfaceDescriptorDataE
+      7   38.9%        LazyCompile: ~compileInput /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/compiler.js:507:24
+      7  100.0%          LazyCompile: ~ret /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/compiler.js:515:15
+      7  100.0%            LazyCompile: ~_renderTemplate /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/express-handlebars/lib/express-handlebars.js:260:18
+     17    2.2%      LazyCompile: *wrap /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/code-gen.js:101:22
+      6   35.3%        LazyCompile: *generateList /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/code-gen.js:143:38
+      5   83.3%          LazyCompile: ~objectLiteral /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/code-gen.js:123:40
+      5  100.0%            LazyCompile: ~objectLiteral /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:1002:40
+      1   16.7%          LazyCompile: *setupHelperArgs /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:1104:44
+      1  100.0%            LazyCompile: *invokeAmbiguous /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:699:44
+      5   29.4%        LazyCompile: *castChunk /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/code-gen.js:52:19
+      4   80.0%          LazyCompile: *wrap /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/code-gen.js:101:22
+      4  100.0%            LazyCompile: *invokeAmbiguous /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:699:44
+      1   20.0%          LazyCompile: ~generateList /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/code-gen.js:143:38
+      1  100.0%            LazyCompile: ~objectLiteral /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/code-gen.js:123:40
+      2   11.8%        LazyCompile: *invokeAmbiguous /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:699:44
+      2  100.0%          LazyCompile: *compile /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:73:28
+      2  100.0%            LazyCompile: ~compileInput /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/compiler.js:507:24
+      1    5.9%        LazyCompile: ~push /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:868:22
+      1  100.0%          LazyCompile: ~invokeAmbiguous /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:699:44
+      1  100.0%            LazyCompile: ~compile /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:73:28
+      1    5.9%        LazyCompile: ~appendToBuffer /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:42:42
+      1  100.0%          LazyCompile: ~appendEscaped /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:416:40
+      1  100.0%            LazyCompile: *compile /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:73:28
+      1    5.9%        LazyCompile: *resolvePath /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:492:36
+      1  100.0%          LazyCompile: ~lookupOnContext /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:448:44
+      1  100.0%            LazyCompile: *compile /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:73:28
+      1    5.9%        LazyCompile: *lookupOnContext /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:448:44
+      1  100.0%          LazyCompile: *compile /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:73:28
+      1  100.0%            LazyCompile: *render /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/express-handlebars/lib/express-handlebars.js:150:15
+     15    2.0%      LazyCompile: *resolve path.js:1032:10
+      5   33.3%        LazyCompile: ~readPackage internal/modules/cjs/loader.js:245:21
+      4   80.0%          LazyCompile: ~readPackageScope internal/modules/cjs/loader.js:276:26
+      2   50.0%            LazyCompile: ~trySelf internal/modules/cjs/loader.js:396:17
+      2   50.0%            LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1077:37
+      1   20.0%          LazyCompile: ~resolveExports internal/modules/cjs/loader.js:427:24
+      1  100.0%            LazyCompile: ~Module._findPath internal/modules/cjs/loader.js:449:28
+      3   20.0%        LazyCompile: ~_getDir /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/express-handlebars/lib/express-handlebars.js:266:16
+      3  100.0%          LazyCompile: ~getTemplates /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/express-handlebars/lib/express-handlebars.js:135:21
+      3  100.0%            LazyCompile: ~<anonymous> /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/express-handlebars/lib/express-handlebars.js:58:51
+      2   13.3%        LazyCompile: ~setopts /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/glob/common.js:47:18
+      2  100.0%          LazyCompile: ~Glob /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/glob/glob.js:118:15
+      2  100.0%            LazyCompile: ~glob /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/glob/glob.js:63:15
+      2   13.3%        LazyCompile: ~_getFile /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/express-handlebars/lib/express-handlebars.js:299:17
+      2  100.0%          LazyCompile: *render /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/express-handlebars/lib/express-handlebars.js:150:15
+      2  100.0%            LazyCompile: ~renderView /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/express-handlebars/lib/express-handlebars.js:183:19
+      2   13.3%        LazyCompile: ~Module._findPath internal/modules/cjs/loader.js:449:28
+      2  100.0%          LazyCompile: ~Module._resolveFilename internal/modules/cjs/loader.js:801:35
+      1   50.0%            LazyCompile: ~Module._load internal/modules/cjs/loader.js:709:24
+      1   50.0%            LazyCompile: *Module._load internal/modules/cjs/loader.js:709:24
+      1    6.7%        LazyCompile: *readPackageScope internal/modules/cjs/loader.js:276:26
+      1  100.0%          LazyCompile: ~trySelf internal/modules/cjs/loader.js:396:17
+      1  100.0%            LazyCompile: ~Module._resolveFilename internal/modules/cjs/loader.js:801:35
+     14    1.8%      LazyCompile: ~closeSync /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/graceful-fs/graceful-fs.js:72:24
+     10   71.4%        LazyCompile: ~readFileSync fs.js:391:22
+     10  100.0%          LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1077:37
+     10  100.0%            LazyCompile: ~Module.load internal/modules/cjs/loader.js:921:33
+      4   28.6%        LazyCompile: *readFileSync fs.js:391:22
+      4  100.0%          LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1077:37
+      2   50.0%            LazyCompile: ~Module.load internal/modules/cjs/loader.js:921:33
+      2   50.0%            LazyCompile: *Module._load internal/modules/cjs/loader.js:709:24
+     14    1.8%      LazyCompile: *readPackage internal/modules/cjs/loader.js:245:21
+     14  100.0%        LazyCompile: *readPackageScope internal/modules/cjs/loader.js:276:26
+     10   71.4%          LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1077:37
+      6   60.0%            LazyCompile: ~Module.load internal/modules/cjs/loader.js:921:33
+      4   40.0%            LazyCompile: *Module._load internal/modules/cjs/loader.js:709:24
+      3   21.4%          LazyCompile: ~trySelf internal/modules/cjs/loader.js:396:17
+      3  100.0%            LazyCompile: ~Module._resolveFilename internal/modules/cjs/loader.js:801:35
+      1    7.1%          LazyCompile: *Module._resolveFilename internal/modules/cjs/loader.js:801:35
+      1  100.0%            LazyCompile: *Module._load internal/modules/cjs/loader.js:709:24
+     14    1.8%      LazyCompile: *SourceNode_walk /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/source-map/lib/source-node.js:221:53
+     13   92.9%        LazyCompile: *SourceNode_walk /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/source-map/lib/source-node.js:221:53
+     12   92.3%          LazyCompile: *SourceNode_walk /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/source-map/lib/source-node.js:221:53
+     11   91.7%            LazyCompile: *SourceNode_walk /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/source-map/lib/source-node.js:221:53
+      1    8.3%            LazyCompile: ~SourceNode_toString /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/source-map/lib/source-node.js:318:61
+      1    7.7%          LazyCompile: ~SourceNode_toString /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/source-map/lib/source-node.js:318:61
+      1  100.0%            t __ZN2v88internal23CallInterfaceDescriptor29InitializePlatformIndependentEPNS0_27CallInterfaceDescriptorDataE
+      1    7.1%        LazyCompile: ~SourceNode_toString /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/source-map/lib/source-node.js:318:61
+      1  100.0%          t __ZN2v88internal23CallInterfaceDescriptor29InitializePlatformIndependentEPNS0_27CallInterfaceDescriptorDataE
+      1  100.0%            LazyCompile: *compile /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:73:28
+     12    1.6%      LazyCompile: ~render /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/express-handlebars/lib/express-handlebars.js:150:15
+     11   91.7%        t __ZN2v88internal23CallInterfaceDescriptor29InitializePlatformIndependentEPNS0_27CallInterfaceDescriptorDataE
+      1    8.3%        LazyCompile: ~renderView /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/express-handlebars/lib/express-handlebars.js:183:19
+      1  100.0%          t __ZN2v88internal23CallInterfaceDescriptor29InitializePlatformIndependentEPNS0_27CallInterfaceDescriptorDataE
+     12    1.6%      LazyCompile: *render /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/express-handlebars/lib/express-handlebars.js:150:15
+     12  100.0%        t __ZN2v88internal23CallInterfaceDescriptor29InitializePlatformIndependentEPNS0_27CallInterfaceDescriptorDataE
+     12    1.6%      LazyCompile: *realpathSync fs.js:1718:22
+      8   66.7%        LazyCompile: *tryExtensions internal/modules/cjs/loader.js:355:23
+      5   62.5%          LazyCompile: ~Module._findPath internal/modules/cjs/loader.js:449:28
+      5  100.0%            LazyCompile: ~Module._resolveFilename internal/modules/cjs/loader.js:801:35
+      2   25.0%          LazyCompile: ~tryPackage internal/modules/cjs/loader.js:293:20
+      2  100.0%            LazyCompile: ~Module._findPath internal/modules/cjs/loader.js:449:28
+      1   12.5%          LazyCompile: *Module._findPath internal/modules/cjs/loader.js:449:28
+      1  100.0%            LazyCompile: *Module._resolveFilename internal/modules/cjs/loader.js:801:35
+      4   33.3%        LazyCompile: ~toRealPath internal/modules/cjs/loader.js:348:20
+      4  100.0%          LazyCompile: ~tryFile internal/modules/cjs/loader.js:339:17
+      4  100.0%            LazyCompile: ~tryExtensions internal/modules/cjs/loader.js:355:23
+     11    1.4%      LazyCompile: *nextTick internal/process/task_queues.js:103:18
+      8   72.7%        LazyCompile: ~onwrite internal/streams/writable.js:394:17
+      8  100.0%          LazyCompile: ~afterWriteDispatched internal/stream_base_commons.js:151:30
+      6   75.0%            LazyCompile: ~writeGeneric internal/stream_base_commons.js:143:22
+      2   25.0%            LazyCompile: ~writevGeneric internal/stream_base_commons.js:118:23
+      1    9.1%        LazyCompile: ~resume internal/streams/readable.js:967:16
+      1  100.0%          LazyCompile: ~Readable.resume internal/streams/readable.js:953:37
+      1  100.0%            LazyCompile: ~_dump _http_incoming.js:297:49
+      1    9.1%        LazyCompile: ~endReadable internal/streams/readable.js:1319:21
+      1  100.0%          LazyCompile: ~Readable.read internal/streams/readable.js:390:35
+      1  100.0%            LazyCompile: ~resume_ internal/streams/readable.js:974:17
+      1    9.1%        LazyCompile: ~emitReadable internal/streams/readable.js:554:22
+      1  100.0%          LazyCompile: ~onEofChunk internal/streams/readable.js:524:20
+      1  100.0%            LazyCompile: ~readableAddChunk internal/streams/readable.js:231:26
+     10    1.3%      LazyCompile: ~getOptions internal/fs/utils.js:285:20
+      6   60.0%        LazyCompile: ~readFileSync fs.js:391:22
+      6  100.0%          LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1077:37
+      6  100.0%            LazyCompile: ~Module.load internal/modules/cjs/loader.js:921:33
+      4   40.0%        LazyCompile: ~readFile fs.js:319:18
+      4  100.0%          LazyCompile: ~go$readFile /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/graceful-fs/graceful-fs.js:117:26
+      4  100.0%            LazyCompile: ~readFile /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/graceful-fs/graceful-fs.js:111:21
+      9    1.2%      LazyCompile: ~session /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/express-session/index.js:179:26
+      9  100.0%        LazyCompile: ~handle /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/express/lib/router/layer.js:86:49
+      9  100.0%          LazyCompile: *next /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/express/lib/router/index.js:176:16
+      9  100.0%            LazyCompile: ~cookieParser /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/cookie-parser/index.js:44:32
+      9    1.2%      LazyCompile: *next /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/express/lib/router/index.js:176:16
+      3   33.3%        LazyCompile: ~strategy.pass /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/passport/lib/middleware/authenticate.js:342:31
+      3  100.0%          LazyCompile: ~SessionStrategy.authenticate /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/passport/lib/strategies/session.js:44:50
+      3  100.0%            LazyCompile: ~attempt /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/passport/lib/middleware/authenticate.js:177:22
+      2   22.2%        LazyCompile: ~session /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/express-session/index.js:179:26
+      2  100.0%          LazyCompile: ~handle /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/express/lib/router/layer.js:86:49
+      2  100.0%            LazyCompile: *next /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/express/lib/router/index.js:176:16
+      2   22.2%        LazyCompile: ~jsonParser /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/body-parser/lib/types/json.js:98:30
+      2  100.0%          LazyCompile: ~handle /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/express/lib/router/layer.js:86:49
+      2  100.0%            LazyCompile: *next /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/express/lib/router/index.js:176:16
+      2   22.2%        LazyCompile: ~error /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/serve-static/index.js:115:39
+      2  100.0%          LazyCompile: *emit events.js:325:44
+      2  100.0%            LazyCompile: ~error /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/send/index.js:267:45
+
+   1056   18.8%  t __ZN4node2fsL4ReadERKN2v820FunctionCallbackInfoINS1_5ValueEEE
+   1056  100.0%    T __ZN2v88internal21Builtin_HandleApiCallEiPmPNS0_7IsolateE
+   1049   99.3%      LazyCompile: ~readSync fs.js:577:18
+    787   75.0%        LazyCompile: ~tryReadSync fs.js:379:21
+    787  100.0%          LazyCompile: ~readFileSync fs.js:391:22
+    783   99.5%            LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1077:37
+    262   25.0%        LazyCompile: *readFileSync fs.js:391:22
+    262  100.0%          LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1077:37
+    154   58.8%            LazyCompile: *Module._load internal/modules/cjs/loader.js:709:24
+    108   41.2%            LazyCompile: ~Module.load internal/modules/cjs/loader.js:921:33
+
+    395    7.0%  T _host_get_clock_service
+
+    297    5.3%  T __ZN4node10contextify17ContextifyContext15CompileFunctionERKN2v820FunctionCallbackInfoINS2_5ValueEEE
+    297  100.0%    T __ZN2v88internal21Builtin_HandleApiCallEiPmPNS0_7IsolateE
+    297  100.0%      LazyCompile: ~wrapSafe internal/modules/cjs/loader.js:969:18
+    297  100.0%        LazyCompile: ~Module._compile internal/modules/cjs/loader.js:1022:37
+    297  100.0%          LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1077:37
+    244   82.2%            LazyCompile: ~Module.load internal/modules/cjs/loader.js:921:33
+     53   17.8%            LazyCompile: *Module._load internal/modules/cjs/loader.js:709:24
+
+    130    2.3%  /usr/lib/system/libsystem_kernel.dylib
+     73   56.2%    LazyCompile: *readSync fs.js:577:18
+     73  100.0%      LazyCompile: *readFileSync fs.js:391:22
+     73  100.0%        LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1077:37
+     73  100.0%          LazyCompile: *Module._load internal/modules/cjs/loader.js:709:24
+     73  100.0%            LazyCompile: *Module.require internal/modules/cjs/loader.js:949:36
+     21   16.2%    LazyCompile: *readFileSync fs.js:391:22
+     21  100.0%      LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1077:37
+     13   61.9%        LazyCompile: ~Module.load internal/modules/cjs/loader.js:921:33
+     13  100.0%          LazyCompile: ~Module._load internal/modules/cjs/loader.js:709:24
+     13  100.0%            LazyCompile: *Module.require internal/modules/cjs/loader.js:949:36
+      8   38.1%        LazyCompile: *Module._load internal/modules/cjs/loader.js:709:24
+      8  100.0%          LazyCompile: *Module.require internal/modules/cjs/loader.js:949:36
+      8  100.0%            LazyCompile: ~require internal/modules/cjs/helpers.js:87:31
+
+    109    1.9%  /usr/lib/system/libsystem_malloc.dylib
+     62   56.9%    t __ZN2v88internal23CallInterfaceDescriptor29InitializePlatformIndependentEPNS0_27CallInterfaceDescriptorDataE
+     10   16.1%      t __ZN2v88internal23CallInterfaceDescriptor29InitializePlatformIndependentEPNS0_27CallInterfaceDescriptorDataE
+      2   20.0%        LazyCompile: ~escapeExpression /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/utils.js:77:26
+      1   50.0%          LazyCompile: *<anonymous> :1:20
+      1  100.0%            LazyCompile: ~main /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/runtime.js:207:18
+      1   50.0%          Eval: ~<anonymous> :1:20
+      1  100.0%            LazyCompile: ~main /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/runtime.js:207:18
+      2   20.0%        LazyCompile: ~checkInvalidHeaderChar _http_common.js:230:32
+      2  100.0%          LazyCompile: ~<anonymous> _http_outgoing.js:549:45
+      2  100.0%            LazyCompile: *hidden internal/errors.js:286:25
+      1   10.0%        LazyCompile: ~receiveResponse /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongoose/node_modules/mongodb/lib/cmap/stream_description.js:28:18
+      1  100.0%          LazyCompile: ~set ismaster /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongoose/node_modules/mongodb/lib/cmap/connection.js:79:15
+      1  100.0%            t __ZN2v88internal23CallInterfaceDescriptor29InitializePlatformIndependentEPNS0_27CallInterfaceDescriptorDataE
+      1   10.0%        LazyCompile: ~readPackage internal/modules/cjs/loader.js:245:21
+      1  100.0%          LazyCompile: ~readPackageScope internal/modules/cjs/loader.js:276:26
+      1  100.0%            LazyCompile: ~trySelf internal/modules/cjs/loader.js:396:17
+      1   10.0%        LazyCompile: ~get hasDataBearingServers /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongodb/lib/sdam/topology_description.js:210:30
+      1  100.0%          LazyCompile: ~shouldCheckForSessionSupport /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongodb/lib/sdam/topology.js:336:33
+      1  100.0%            LazyCompile: ~<anonymous> /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongodb/lib/operations/execute_operation.js:16:43
+      1   10.0%        LazyCompile: ~formatPrimitive internal/util/inspect.js:1402:25
+      1  100.0%          LazyCompile: ~formatValue internal/util/inspect.js:746:21
+      1  100.0%            LazyCompile: ~formatProperty internal/util/inspect.js:1689:24
+      1   10.0%        LazyCompile: ~_pathToPositionalSyntax /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongoose/lib/schema.js:846:33
+      1  100.0%          LazyCompile: ~Schema.path /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongoose/lib/schema.js:622:33
+      1  100.0%            LazyCompile: ~_init /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongoose/lib/document.js:668:17
+      1   10.0%        LazyCompile: *next /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/parser.js:478:32
+      1  100.0%          LazyCompile: ~lex /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/parser.js:525:30
+      1  100.0%            LazyCompile: ~lex /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/parser.js:525:30
+      7   11.3%      LazyCompile: *realpathSync fs.js:1718:22
+      4   57.1%        LazyCompile: *tryExtensions internal/modules/cjs/loader.js:355:23
+      3   75.0%          LazyCompile: ~tryPackage internal/modules/cjs/loader.js:293:20
+      2   66.7%            LazyCompile: *Module._findPath internal/modules/cjs/loader.js:449:28
+      1   33.3%            LazyCompile: ~Module._findPath internal/modules/cjs/loader.js:449:28
+      1   25.0%          LazyCompile: ~Module._findPath internal/modules/cjs/loader.js:449:28
+      1  100.0%            LazyCompile: ~Module._resolveFilename internal/modules/cjs/loader.js:801:35
+      3   42.9%        LazyCompile: ~toRealPath internal/modules/cjs/loader.js:348:20
+      3  100.0%          LazyCompile: ~tryFile internal/modules/cjs/loader.js:339:17
+      2   66.7%            LazyCompile: ~tryExtensions internal/modules/cjs/loader.js:355:23
+      1   33.3%            LazyCompile: ~tryPackage internal/modules/cjs/loader.js:293:20
+      4    6.5%      LazyCompile: ~render /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/express-handlebars/lib/express-handlebars.js:150:15
+      4  100.0%        t __ZN2v88internal23CallInterfaceDescriptor29InitializePlatformIndependentEPNS0_27CallInterfaceDescriptorDataE
+      4    6.5%      LazyCompile: *readPackage internal/modules/cjs/loader.js:245:21
+      4  100.0%        LazyCompile: *readPackageScope internal/modules/cjs/loader.js:276:26
+      3   75.0%          LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1077:37
+      2   66.7%            LazyCompile: ~Module.load internal/modules/cjs/loader.js:921:33
+      1   33.3%            LazyCompile: *Module._load internal/modules/cjs/loader.js:709:24
+      1   25.0%          LazyCompile: ~trySelf internal/modules/cjs/loader.js:396:17
+      1  100.0%            LazyCompile: ~Module._resolveFilename internal/modules/cjs/loader.js:801:35
+      2    3.2%      LazyCompile: ~formatValue internal/util/inspect.js:746:21
+      2  100.0%        LazyCompile: *formatProperty internal/util/inspect.js:1689:24
+      1   50.0%          LazyCompile: ~formatRaw internal/util/inspect.js:815:19
+      1  100.0%            LazyCompile: ~formatValue internal/util/inspect.js:746:21
+      1   50.0%          LazyCompile: *formatRaw internal/util/inspect.js:815:19
+      1  100.0%            LazyCompile: ~formatValue internal/util/inspect.js:746:21
+      2    3.2%      LazyCompile: ~emit events.js:325:44
+      1   50.0%        LazyCompile: ~emitReserved /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/socket.io/dist/typed-events.js:55:17
+      1  100.0%          LazyCompile: ~<anonymous> /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/socket.io/dist/namespace.js:117:30
+      1  100.0%            LazyCompile: ~processTicksAndRejections internal/process/task_queues.js:67:35
+      1   50.0%        LazyCompile: ~addChunk internal/streams/readable.js:299:18
+      1  100.0%          LazyCompile: ~readableAddChunk internal/streams/readable.js:231:26
+      1  100.0%            LazyCompile: ~Readable.push internal/streams/readable.js:222:35
+      1    1.6%      LazyCompile: ~write /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongoose/node_modules/mongodb/lib/cmap/connection.js:301:15
+      1  100.0%        LazyCompile: ~_command /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongoose/node_modules/mongodb/lib/core/wireprotocol/command.js:41:18
+      1  100.0%          LazyCompile: ~command /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongoose/node_modules/mongodb/lib/core/wireprotocol/command.js:19:17
+      1  100.0%            LazyCompile: ~query /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongoose/node_modules/mongodb/lib/core/wireprotocol/query.js:14:15
+      1    1.6%      LazyCompile: ~toRealPath internal/modules/cjs/loader.js:348:20
+      1  100.0%        LazyCompile: ~tryFile internal/modules/cjs/loader.js:339:17
+      1  100.0%          LazyCompile: ~tryExtensions internal/modules/cjs/loader.js:355:23
+      1  100.0%            LazyCompile: ~tryPackage internal/modules/cjs/loader.js:293:20
+      1    1.6%      LazyCompile: ~serializeLong /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/bson/lib/parser/serializer.js:299:23
+      1  100.0%        LazyCompile: ~serializeInto /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/bson/lib/parser/serializer.js:549:23
+      1  100.0%          LazyCompile: ~serializeObject /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/bson/lib/parser/serializer.js:257:25
+      1  100.0%            LazyCompile: ~serializeInto /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/bson/lib/parser/serializer.js:549:23
+      1    1.6%      LazyCompile: ~serializeInto /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/bson/lib/parser/serializer.js:549:23
+      1  100.0%        LazyCompile: ~serializeObject /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/bson/lib/parser/serializer.js:257:25
+      1  100.0%          LazyCompile: ~serializeInto /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/bson/lib/parser/serializer.js:549:23
+      1  100.0%            LazyCompile: ~serialize /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/bson/lib/bson.js:105:19
+      1    1.6%      LazyCompile: ~serialize /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongoose/node_modules/bson/lib/bson/bson.js:47:46
+      1  100.0%        LazyCompile: ~Query.toBin /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongoose/node_modules/mongodb/lib/core/connection/commands.js:90:33
+      1  100.0%          LazyCompile: ~writeCommand /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongoose/node_modules/mongodb/lib/cmap/message_stream.js:51:15
+      1  100.0%            LazyCompile: ~write /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongoose/node_modules/mongodb/lib/cmap/connection.js:301:15
+      1    1.6%      LazyCompile: ~realpathSync fs.js:1718:22
+      1  100.0%        LazyCompile: ~toRealPath internal/modules/cjs/loader.js:348:20
+      1  100.0%          LazyCompile: ~tryFile internal/modules/cjs/loader.js:339:17
+      1  100.0%            LazyCompile: ~tryPackage internal/modules/cjs/loader.js:293:20
+      1    1.6%      LazyCompile: ~parse /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/content-type/index.js:106:16
+      1  100.0%        LazyCompile: ~setCharset /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/express/lib/utils.js:250:41
+      1  100.0%          LazyCompile: ~send /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/express/lib/response.js:107:25
+      1  100.0%            LazyCompile: ~done /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/express/lib/response.js:1006:27
+      1    1.6%      LazyCompile: ~messageHandler /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongodb/lib/cmap/connection.js:417:35
+      1  100.0%        LazyCompile: ~emit events.js:325:44
+      1  100.0%          LazyCompile: ~processIncomingData /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongodb/lib/cmap/message_stream.js:79:29
+      1  100.0%            LazyCompile: ~_write /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongodb/lib/cmap/message_stream.js:26:11
+      1    1.6%      LazyCompile: ~makeConnection /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongodb/lib/cmap/connect.js:226:24
+      1  100.0%        LazyCompile: ~connect /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongodb/lib/cmap/connect.js:15:17
+      1  100.0%          LazyCompile: ~checkServer /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongodb/lib/sdam/monitor.js:138:21
+      1  100.0%            LazyCompile: ~<anonymous> /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongodb/lib/sdam/monitor.js:222:12
+      1    1.6%      LazyCompile: ~listenerCount events.js:643:23
+      1  100.0%        LazyCompile: ~value internal/console/constructor.js:258:20
+      1  100.0%          LazyCompile: ~log internal/console/constructor.js:357:6
+      1  100.0%            t __ZN4node9inspector12_GLOBAL__N_120InspectorConsoleCallERKN2v820FunctionCallbackInfoINS2_5ValueEEE
+      1    1.6%      LazyCompile: ~listOnTimeout internal/timers.js:503:25
+      1  100.0%        LazyCompile: ~processTimers internal/timers.js:483:25
+      1    1.6%      LazyCompile: ~lazyrouter /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/express/lib/application.js:137:37
+      1  100.0%        LazyCompile: ~use /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/express/lib/application.js:187:23
+      1  100.0%          Eval: ~<anonymous> /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/server.js:1:1
+      1  100.0%            LazyCompile: ~Module._compile internal/modules/cjs/loader.js:1022:37
+      1    1.6%      LazyCompile: ~inflight /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/inflight/inflight.js:7:19
+      1  100.0%        LazyCompile: ~wrapper /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/wrappy/wrappy.js:19:19
+      1  100.0%          LazyCompile: ~Glob._readdir /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/glob/glob.js:523:36
+      1  100.0%            LazyCompile: ~Glob._processGlobStar /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/glob/glob.js:621:44
+      1    1.6%      LazyCompile: ~handleOperationResult /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongoose/node_modules/mongodb/lib/core/sdam/server.js:527:40
+      1  100.0%        LazyCompile: ~messageHandler /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongoose/node_modules/mongodb/lib/cmap/connection.js:224:33
+      1  100.0%          LazyCompile: ~emit events.js:325:44
+      1  100.0%            LazyCompile: ~processIncomingData /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongoose/node_modules/mongodb/lib/cmap/message_stream.js:103:29
+      1    1.6%      LazyCompile: ~afterConnect net.js:1108:22
+      1    1.6%      LazyCompile: ~_init /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongoose/lib/document.js:668:17
+      1  100.0%        LazyCompile: ~init /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongoose/lib/document.js:654:14
+      1  100.0%          LazyCompile: ~Document.$__init /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongoose/lib/document.js:566:38
+      1  100.0%            LazyCompile: ~syncWrapper /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/kareem/index.js:232:30
+      1    1.6%      LazyCompile: ~_command /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongoose/node_modules/mongodb/lib/core/wireprotocol/command.js:41:18
+      1  100.0%        LazyCompile: ~command /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongoose/node_modules/mongodb/lib/core/wireprotocol/command.js:19:17
+      1  100.0%          LazyCompile: ~command /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongoose/node_modules/mongodb/lib/cmap/connection.js:174:10
+      1  100.0%            LazyCompile: ~<anonymous> /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongoose/node_modules/mongodb/lib/core/connection/connect.js:87:41
+      1    1.6%      LazyCompile: ~ReadableState /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/readable-stream/lib/_stream_readable.js:101:23
+      1  100.0%        LazyCompile: ~Readable /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/readable-stream/lib/_stream_readable.js:178:18
+      1  100.0%          LazyCompile: ~Duplex /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/readable-stream/lib/_stream_duplex.js:64:16
+      1  100.0%            LazyCompile: ~BufferList /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/bl/bl.js:6:21
+      1    1.6%      LazyCompile: ~Module._findPath internal/modules/cjs/loader.js:449:28
+      1  100.0%        LazyCompile: ~Module._resolveFilename internal/modules/cjs/loader.js:801:35
+      1  100.0%          LazyCompile: ~Module._load internal/modules/cjs/loader.js:709:24
+      1  100.0%            LazyCompile: ~Module.require internal/modules/cjs/loader.js:949:36
+      1    1.6%      LazyCompile: ~MersenneTwister19937.init_genrand /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/faker/vendor/mersenne.js:101:32
+      1  100.0%        LazyCompile: ~Mersenne /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/faker/lib/mersenne.js:3:18
+      1  100.0%          LazyCompile: ~Faker /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/faker/lib/index.js:24:16
+      1  100.0%            Eval: ~<anonymous> /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/faker/index.js:1:1
+      1    1.6%      LazyCompile: ~Long.neg /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/bson/lib/long.js:618:35
+      1  100.0%        LazyCompile: ~Long.fromNumber /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/bson/lib/long.js:130:32
+      1  100.0%          Eval: ~<anonymous> /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/bson/lib/parser/deserializer.js:1:1
+      1  100.0%            LazyCompile: ~Module._compile internal/modules/cjs/loader.js:1022:37
+      1    1.6%      LazyCompile: ~Long.lessThanOrEqual /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongoose/node_modules/bson/lib/bson/long.js:273:42
+      1  100.0%        LazyCompile: ~deserializeObject /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongoose/node_modules/bson/lib/bson/parser/deserializer.js:43:33
+      1  100.0%          LazyCompile: ~deserializeObject /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongoose/node_modules/bson/lib/bson/parser/deserializer.js:43:33
+      1  100.0%            LazyCompile: ~deserialize /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongoose/node_modules/bson/lib/bson/parser/deserializer.js:19:27
+      1    1.6%      LazyCompile: ~Hash internal/crypto/hash.js:37:14
+      1  100.0%        LazyCompile: ~createHash crypto.js:115:20
+      1  100.0%          LazyCompile: ~hash /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/express-session/index.js:596:14
+      1  100.0%            LazyCompile: ~isModified /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/express-session/index.js:425:24
+      1    1.6%      LazyCompile: ~EventEmitter.init events.js:192:29
+      1  100.0%        LazyCompile: ~EventEmitter events.js:83:22
+      1  100.0%          LazyCompile: ~Stream internal/streams/legacy.js:9:16
+      1  100.0%            LazyCompile: ~Writable internal/streams/writable.js:218:18
+      1    1.6%      LazyCompile: ~<anonymous> /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/server.js:172:22
+      1  100.0%        LazyCompile: ~handle /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/express/lib/router/layer.js:86:49
+      1  100.0%          LazyCompile: ~next /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/express/lib/router/route.js:114:16
+      1  100.0%            LazyCompile: ~dispatch /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/express/lib/router/route.js:98:45
+      1    1.6%      LazyCompile: ~<anonymous> /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongodb/lib/sdam/monitor.js:172:68
+      1  100.0%        LazyCompile: ~messageHandler /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongodb/lib/cmap/connection.js:417:35
+      1  100.0%          LazyCompile: ~emit events.js:325:44
+      1  100.0%            LazyCompile: ~processIncomingData /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongodb/lib/cmap/message_stream.js:79:29
+      1    1.6%      LazyCompile: ~<anonymous> /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/connect-mongo/build/main/lib/MongoStore.js:124:42
+      1  100.0%        t __ZN4node10task_queueL13RunMicrotasksERKN2v820FunctionCallbackInfoINS1_5ValueEEE
+      1  100.0%          LazyCompile: ~processTicksAndRejections internal/process/task_queues.js:67:35
+      1    1.6%      LazyCompile: *readPackageScope internal/modules/cjs/loader.js:276:26
+      1  100.0%        LazyCompile: ~trySelf internal/modules/cjs/loader.js:396:17
+      1  100.0%          LazyCompile: ~Module._resolveFilename internal/modules/cjs/loader.js:801:35
+      1  100.0%            LazyCompile: ~Module._load internal/modules/cjs/loader.js:709:24
+      1    1.6%      LazyCompile: *parse /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/parser.js:269:30
+      1  100.0%        LazyCompile: ~parseWithoutProcessing /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/base.js:33:32
+      1  100.0%          LazyCompile: ~parse /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/base.js:51:15
+      1  100.0%            LazyCompile: ~compileInput /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/compiler.js:507:24
+      1    1.6%      LazyCompile: *_addListener events.js:404:22
+      1  100.0%        LazyCompile: ~addListener events.js:466:58
+      1  100.0%          LazyCompile: ~Readable.on internal/streams/readable.js:866:33
+      1  100.0%            LazyCompile: ~socketListenerWrap _http_server.js:945:37
+      1    1.6%      LazyCompile: *Module.require internal/modules/cjs/loader.js:949:36
+      1  100.0%        LazyCompile: ~require internal/modules/cjs/helpers.js:87:31
+      1  100.0%          Eval: ~<anonymous> /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/faker/lib/locales/it/index.js:1:1
+      1  100.0%            LazyCompile: ~Module._compile internal/modules/cjs/loader.js:1022:37
+      1    1.6%      LazyCompile: *Module._load internal/modules/cjs/loader.js:709:24
+      1  100.0%        LazyCompile: ~Module.require internal/modules/cjs/loader.js:949:36
+      1  100.0%          LazyCompile: ~require internal/modules/cjs/helpers.js:87:31
+      1  100.0%            LazyCompile: ~module.exports /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/bluebird/js/release/nodeify.js:2:26
+      7    6.4%    T __ZN2v88internal30Builtin_ArrayBufferConstructorEiPmPNS0_7IsolateE
+      7  100.0%      t __ZN2v88internal23CallInterfaceDescriptor29InitializePlatformIndependentEPNS0_27CallInterfaceDescriptorDataE
+      7  100.0%        LazyCompile: ~FastBuffer internal/buffer.js:951:1
+      4   57.1%          LazyCompile: ~createUnsafeBuffer buffer.js:149:28
+      3   75.0%            LazyCompile: ~allocUnsafeSlow buffer.js:395:50
+      1   25.0%            LazyCompile: ~createPool buffer.js:158:20
+      3   42.9%          LazyCompile: ~alloc buffer.js:372:30
+      3  100.0%            LazyCompile: ~allocBuffer /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/mongoose/node_modules/bson/lib/bson/parser/utils.js:15:21
+      3    2.8%    T __ZN2v88internal21Builtin_JsonStringifyEiPmPNS0_7IsolateE
+      2   66.7%      LazyCompile: ~<anonymous> /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/server.js:172:22
+      2  100.0%        LazyCompile: ~handle /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/express/lib/router/layer.js:86:49
+      2  100.0%          LazyCompile: ~next /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/express/lib/router/route.js:114:16
+      2  100.0%            LazyCompile: ~dispatch /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/express/lib/router/route.js:98:45
+      1   33.3%      LazyCompile: *setupHelperArgs /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:1104:44
+      1  100.0%        LazyCompile: *invokeAmbiguous /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:699:44
+      1  100.0%          LazyCompile: *compile /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:73:28
+      1  100.0%            LazyCompile: *render /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/express-handlebars/lib/express-handlebars.js:150:15
+
+     95    1.7%  t __ZN4node2fsL22InternalModuleReadJSONERKN2v820FunctionCallbackInfoINS1_5ValueEEE
+     95  100.0%    T __ZN2v88internal21Builtin_HandleApiCallEiPmPNS0_7IsolateE
+     95  100.0%      LazyCompile: ~read internal/modules/package_json_reader.js:16:14
+     93   97.9%        LazyCompile: ~readPackage internal/modules/cjs/loader.js:245:21
+     89   95.7%          LazyCompile: ~resolveExports internal/modules/cjs/loader.js:427:24
+     89  100.0%            LazyCompile: ~Module._findPath internal/modules/cjs/loader.js:449:28
+      3    3.2%          LazyCompile: ~readPackageScope internal/modules/cjs/loader.js:276:26
+      3  100.0%            LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1077:37
+      1    1.1%          LazyCompile: ~tryPackage internal/modules/cjs/loader.js:293:20
+      1  100.0%            LazyCompile: ~Module._findPath internal/modules/cjs/loader.js:449:28
+      2    2.1%        LazyCompile: *readPackage internal/modules/cjs/loader.js:245:21
+      2  100.0%          LazyCompile: ~tryPackage internal/modules/cjs/loader.js:293:20
+      1   50.0%            LazyCompile: ~Module._findPath internal/modules/cjs/loader.js:449:28
+      1   50.0%            LazyCompile: *Module._findPath internal/modules/cjs/loader.js:449:28
+
+     91    1.6%  t __ZN4node2fsL4OpenERKN2v820FunctionCallbackInfoINS1_5ValueEEE
+     91  100.0%    T __ZN2v88internal21Builtin_HandleApiCallEiPmPNS0_7IsolateE
+     80   87.9%      LazyCompile: ~openSync fs.js:489:18
+     80  100.0%        LazyCompile: ~readFileSync fs.js:391:22
+     80  100.0%          LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1077:37
+     77   96.3%            LazyCompile: ~Module.load internal/modules/cjs/loader.js:921:33
+      3    3.8%            LazyCompile: *Module._load internal/modules/cjs/loader.js:709:24
+     11   12.1%      LazyCompile: ~readFile fs.js:319:18
+     11  100.0%        LazyCompile: ~go$readFile /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/graceful-fs/graceful-fs.js:117:26
+     11  100.0%          LazyCompile: ~readFile /Users/camilogalvezvidal/Workspace/MyProjects/Coderhouse/Full-Stack Developer/Programación Back-end/coderhouse_backend/node_modules/graceful-fs/graceful-fs.js:111:21
+     11  100.0%            LazyCompile: ~<anonymous> internal/util.js:307:24
+
+     61    1.1%  T _task_get_special_port
+     39   63.9%    LazyCompile: *stat internal/modules/cjs/loader.js:133:14
+     27   69.2%      LazyCompile: ~Module._findPath internal/modules/cjs/loader.js:449:28
+     27  100.0%        LazyCompile: ~Module._resolveFilename internal/modules/cjs/loader.js:801:35
+     24   88.9%          LazyCompile: ~Module._load internal/modules/cjs/loader.js:709:24
+     22   91.7%            LazyCompile: ~Module.require internal/modules/cjs/loader.js:949:36
+      2    8.3%            LazyCompile: *Module.require internal/modules/cjs/loader.js:949:36
+      3   11.1%          LazyCompile: *Module._load internal/modules/cjs/loader.js:709:24
+      2   66.7%            LazyCompile: ~Module.require internal/modules/cjs/loader.js:949:36
+      1   33.3%            LazyCompile: *Module.require internal/modules/cjs/loader.js:949:36
+     12   30.8%      LazyCompile: ~tryFile internal/modules/cjs/loader.js:339:17
+     12  100.0%        LazyCompile: ~tryExtensions internal/modules/cjs/loader.js:355:23
+     12  100.0%          LazyCompile: ~Module._findPath internal/modules/cjs/loader.js:449:28
+     12  100.0%            LazyCompile: ~Module._resolveFilename internal/modules/cjs/loader.js:801:35
+     20   32.8%    LazyCompile: *tryExtensions internal/modules/cjs/loader.js:355:23
+     14   70.0%      LazyCompile: ~Module._findPath internal/modules/cjs/loader.js:449:28
+     14  100.0%        LazyCompile: ~Module._resolveFilename internal/modules/cjs/loader.js:801:35
+     12   85.7%          LazyCompile: ~Module._load internal/modules/cjs/loader.js:709:24
+      9   75.0%            LazyCompile: ~Module.require internal/modules/cjs/loader.js:949:36
+      3   25.0%            LazyCompile: *Module.require internal/modules/cjs/loader.js:949:36
+      2   14.3%          LazyCompile: *Module._load internal/modules/cjs/loader.js:709:24
+      2  100.0%            LazyCompile: *Module.require internal/modules/cjs/loader.js:949:36
+      4   20.0%      LazyCompile: *Module._findPath internal/modules/cjs/loader.js:449:28
+      4  100.0%        LazyCompile: *Module._resolveFilename internal/modules/cjs/loader.js:801:35
+      4  100.0%          LazyCompile: *Module._load internal/modules/cjs/loader.js:709:24
+      4  100.0%            LazyCompile: *Module.require internal/modules/cjs/loader.js:949:36
+      2   10.0%      LazyCompile: ~tryPackage internal/modules/cjs/loader.js:293:20
+      2  100.0%        LazyCompile: ~Module._findPath internal/modules/cjs/loader.js:449:28
+      2  100.0%          LazyCompile: ~Module._resolveFilename internal/modules/cjs/loader.js:801:35
+      2  100.0%            LazyCompile: ~Module._load internal/modules/cjs/loader.js:709:24
+      2    3.3%    LazyCompile: *Module._findPath internal/modules/cjs/loader.js:449:28
+      2  100.0%      LazyCompile: *Module._resolveFilename internal/modules/cjs/loader.js:801:35
+      2  100.0%        LazyCompile: *Module._load internal/modules/cjs/loader.js:709:24
+      2  100.0%          LazyCompile: *Module.require internal/modules/cjs/loader.js:949:36
+      2  100.0%            LazyCompile: ~require internal/modules/cjs/helpers.js:87:31
+
