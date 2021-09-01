@@ -15,6 +15,7 @@
 - Se agrega lógica para el manejo de procesos utilizando dependencia **PM2**.
 - Se agrega lógica para realizar _logs_ de alto nivel, utilizando la librería **log4js**.
 - Se agrega lógica para comprimir el código utilizando la dependencia **GZip**.
+- Se realiza despliegue del servidor en **Heroku**.
 - Para esta prueba se divide en dos las lógicas donde se probará la conexión. Estas son **Productos** y **Canal de chat**.
   - Para los productos:
     - Se utiliza una API REST para el manejo de productos, desarrollada con **Express**
@@ -76,6 +77,10 @@ PORT: Puerto donde se ejecutará el servidor.
 FACEBOOK_CLIENT_ID: client ID de facebook developer para el inicio de sesión con Facebook.
 FACEBOOK_CLIENT_SECRET: client secret de facebook developer para el inicio de sesión con Facebook.
 CLUSTER o FORK: Si es que desea ejecutarlo en modo cluster o modo fork.
+```
+### URL para acceder al sitio alojado en Heroku
+```sh
+https://coderhouse-cgv-challenge33.herokuapp.com
 ```
 
 ### Listado de vistas disponibles
